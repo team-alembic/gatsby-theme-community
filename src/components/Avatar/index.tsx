@@ -13,12 +13,12 @@ export const Avatar = ({ image, size }: AvatarProps) => (
       height: size === "large" ? [8, 8, 8] : 6,
       borderRadius: "50%",
       padding: 2,
-      minWidth: size === "large" ? [8, 8, 8] : 6
+      minWidth: size === "large" ? [8, 8, 8] : 6,
     }}
     css={{
       backgroundImage: `url(${image})`,
       backgroundSize: "cover",
-      backgroundPosition: "center"
+      backgroundPosition: "center",
     }}
   />
 );

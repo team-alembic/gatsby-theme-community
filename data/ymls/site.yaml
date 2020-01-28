@@ -1,0 +1,47 @@
+- title: Alembic Theme
+  aboutTitle: About
+  eventsTitle: Past Events
+  organisersTitle: Organisers
+  sponsorsTitle: Sponsors
+  pageInformation:
+    heading1: About Alembic Theme
+    paragraph1: This Gatbsy theme is used to generally community website
+  footer:
+    message1: Interested in the code?
+    message2: Enjoy!
+    copyright: Powered by Gatsby & Theme UI.
+    iconType: fab
+    iconKeyword1: meetup
+    iconLink1: "https://www.meetup.com/"
+    iconKeyword2: twitter
+    iconLink2: "https://twitter.com/"
+    iconKeyword3: github
+    iconLink3: "https://github.com/"
+  iconButton:
+    buttonText: Sign up on Meetup
+    buttonHref: https://www.meetup.com
+    buttonImage: meetup.svg
+    buttonIconName: meetup
+    buttonIconPrefix: fab
+  talks:
+    title: Talks
+    email: meetup@email.com
+    line1: Submit a Talk Proposal
+    line2: "Send submissions to "
+  heroEvent:
+    subHeading1: "Next Meetup:"
+    subHeading2: "Join this Event:"
+  headerNav:
+    - description: Home
+      href: /
+    - description: Past Events
+      href: /events
+    - description: About
+      href: /about
+  paginationButtons:
+    previous: Previous
+    next: Next
+  # Default Props for unfurling
+  description: Elixir Sydney is a regular meetup where developers meet to talk and learn about all things Elixir.
+  siteUrl: https://elixir-sydney-gatsby.netlify.com
+  location: alembic_company
