@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Box, Flex, jsx, Styled } from "theme-ui";
-import { IconButton } from "../buttons/index";
 import SiteYamlType from "../../types/siteYaml";
+import { IconButton } from "../buttons/index";
 
 import { Logo } from "../Logo";
 

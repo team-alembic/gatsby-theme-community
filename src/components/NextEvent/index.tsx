@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Styled } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { Container, Flex, jsx, Styled } from "theme-ui";
 
 export interface NextEventProps {
   siteYaml: any;
@@ -45,7 +45,7 @@ export const NextEvent = ({
               margin: 1,
               fontWeight: "normal"
             }}
-          ></Styled.h4>
+          />
           <Styled.h3
             sx={{
               margin: 1,

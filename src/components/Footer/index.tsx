@@ -1,7 +1,7 @@
 /** @jsx jsx */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Flex, jsx, Styled } from "theme-ui";
 import SiteYamlType from "../../types/siteYaml";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { IconButton } from "../buttons/index";
 import { SocialIcon } from "../SocialIcon";

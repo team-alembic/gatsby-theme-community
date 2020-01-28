@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Styled } from "theme-ui";
+import { Box, Flex, jsx, Styled } from "theme-ui";
 
 export interface QuoteProps {
   title: string;

@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { Flex, jsx, Styled, Box } from "theme-ui";
-import { ReactNode, Children } from "react";
+import { Children, ReactNode } from "react";
+import { Box, Flex, jsx, Styled } from "theme-ui";
 
 import { Avatar } from "../Avatar";
 import { LinkIcon } from "../LinkIcon";

@@ -1,0 +1,36 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-react-hooks",
+    "tslint-config-prettier"
+  ],
+  "jsRules": {
+    "object-literal-sort-keys": true,
+    "no-console": false,
+    "one-variable-per-declaration": false,
+    "curly": [true, "ignore-same-line"],
+    "no-shadowed-variable": false
+  },
+  "linterOptions": {
+    "exclude": ["*.json", "**/*.json"]
+  },
+  "rules": {
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "no-console": [true, "log", "dir"],
+    "object-literal-sort-keys": false,
+    "interface-name": [true, "never-prefix"],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+    "react-hooks-nesting": "error",
+    "no-implicit-dependencies": [true, "dev"]
+  },
+  "rulesDirectory": []
+}

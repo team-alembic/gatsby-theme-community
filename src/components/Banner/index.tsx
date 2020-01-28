@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui";
+import { Box, jsx } from "theme-ui";
 
 export interface BannerProps {
   backgroundImageUrl: string;

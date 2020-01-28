@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Box, Flex, jsx, Styled, Container } from "theme-ui";
+import { Box, Container, Flex, jsx, Styled } from "theme-ui";
 import { Map } from "../Map";
 
 export interface MapDescriptionProps {

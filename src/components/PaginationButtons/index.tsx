@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { Flex, jsx, Styled, Box } from "theme-ui";
-import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "gatsby";
+import { Box, Flex, jsx, Styled } from "theme-ui";
 import SiteYamlType from "../../types/siteYaml";
 
 export interface PaginationButtonsProps {

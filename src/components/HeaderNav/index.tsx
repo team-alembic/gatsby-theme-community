@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { useState, useEffect } from "react";
-import { jsx, Box, Flex, Styled } from "theme-ui";
+import { useEffect, useState } from "react";
+import { Box, Flex, jsx, Styled } from "theme-ui";
 import SiteYamlType from "../../types/siteYaml";
 import { Logo } from "../Logo";
 
@@ -18,24 +18,17 @@ export interface HeaderNavProps {
   page: string;
 }
 
-export const HeaderNav = ({
-  togglePageFix,
-  siteYaml,
-  logo,
-  page
-}: HeaderNavProps) => {
+export const HeaderNav = ({ togglePageFix, siteYaml, logo, page }: HeaderNavProps) => {
   const { title, headerNav } = siteYaml;
 
   const [headerBg, setHeaderBg] = useState("headerTransparent");
 
   useEffect(() => {
-    window.addEventListener("scroll", function() {
-      let currentOffset = window.pageYOffset;
-      let windowWidth = window.innerWidth;
-      let breakPoint = windowWidth > 800 ? 200 : 100;
-      setHeaderBg(
-        currentOffset > breakPoint ? "headerOpaque" : "headerTransparent"
-      );
+    window.addEventListener("scroll", () => {
+      const currentOffset = window.pageYOffset;
+      const windowWidth = window.innerWidth;
+      const breakPoint = windowWidth > 800 ? 200 : 100;
+      setHeaderBg(currentOffset > breakPoint ? "headerOpaque" : "headerTransparent");
     });
   });
 
@@ -45,7 +38,7 @@ export const HeaderNav = ({
         backgroundColor: page === "home" ? headerBg : "headerOpaque",
         transition: ".6s",
         paddingX: [4, 4, 5],
-        paddingY: 3
+        paddingY: 3,
       }}
     >
       <BurgerNav
@@ -53,7 +46,7 @@ export const HeaderNav = ({
         title={title}
         links={headerNav.map(link => ({
           description: link.description,
-          href: link.href
+          href: link.href,
         }))}
         logo={logo}
         page={page}
@@ -64,7 +57,7 @@ export const HeaderNav = ({
         logo={logo}
         links={headerNav.map(link => ({
           description: link.description,
-          href: link.href
+          href: link.href,
         }))}
       />
     </Box>
@@ -85,7 +78,7 @@ const Navbar = ({ links, title, logo, page }: NavbarProps) => {
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
-          paddingY: 3
+          paddingY: 3,
         }}
       >
         <Styled.a href="/">
@@ -98,14 +91,14 @@ const Navbar = ({ links, title, logo, page }: NavbarProps) => {
           css={{
             a: {
               opacity: 0.8,
-              transition: ".4s"
+              transition: ".4s",
             },
             "&:hover > a": {
-              opacity: 1
+              opacity: 1,
             },
             "&:hover > a:not(:hover)": {
-              opacity: ".5"
-            }
+              opacity: ".5",
+            },
           }}
         >
           {links.map((link: LinkProps, i: number) => (
@@ -113,7 +106,7 @@ const Navbar = ({ links, title, logo, page }: NavbarProps) => {
               key={i}
               href={link.href}
               sx={{
-                textDecoration: "none"
+                textDecoration: "none",
               }}
             >
               <HeaderLink>{link.description.toUpperCase()}</HeaderLink>
@@ -135,10 +128,10 @@ const HeaderLogo = ({ children, logo, page }: HeaderLogoProps) => {
   const [smallHeadingOpacity, setHeadingOpacity] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", function() {
-      let currentOffset = window.pageYOffset;
-      let windowWidth = window.innerWidth;
-      let breakPoint = windowWidth > 800 ? 500 : 100;
+    window.addEventListener("scroll", () => {
+      const currentOffset = window.pageYOffset;
+      const windowWidth = window.innerWidth;
+      const breakPoint = windowWidth > 800 ? 500 : 100;
       setHeadingOpacity(currentOffset > breakPoint ? 1 : 0);
     });
   });
@@ -160,7 +153,7 @@ const HeaderLogo = ({ children, logo, page }: HeaderLogoProps) => {
           display: "inline-block",
           verticalAlign: "super",
           marginLeft: "20px",
-          transition: ".6s opacity"
+          transition: ".6s opacity",
         }}
       >
         {children}
@@ -183,7 +176,7 @@ const HeaderLink = ({ children }: ChildrenProps) => (
       marginX: [4, 4, 5],
       letterSpacing: [0, 0, "1px"],
       fontWeight: "light",
-      font: "modern"
+      font: "modern",
     }}
   >
     {children}
@@ -195,7 +188,7 @@ const BurgerLink = ({ children }: ChildrenProps) => (
     sx={{
       variant: "borderStyles.veryLightBorderTop",
       width: "100%",
-      padding: 4
+      padding: 4,
     }}
   >
     <Styled.p
@@ -210,8 +203,8 @@ const BurgerLink = ({ children }: ChildrenProps) => (
         "&:hover": {
           color: "background",
           backgroundColor: "elixirLight",
-          variant: "boxShadowStyles.mediumShadow"
-        }
+          variant: "boxShadowStyles.mediumShadow",
+        },
       }}
     >
       {children}
@@ -227,7 +220,7 @@ const IconBar = () => (
       marginY: "6px",
       backgroundColor: "background",
       opacity: 0.8,
-      borderRadius: 4
+      borderRadius: 4,
     }}
   />
 );
@@ -252,13 +245,7 @@ interface BurgerNavProps {
   page: string;
 }
 
-const BurgerNav = ({
-  links,
-  title,
-  togglePageFix,
-  logo,
-  page
-}: BurgerNavProps) => {
+const BurgerNav = ({ links, title, togglePageFix, logo, page }: BurgerNavProps) => {
   const [value, setValue] = useState("none");
 
   const dropDownOnClick = () => {
@@ -278,7 +265,7 @@ const BurgerNav = ({
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
-          paddingY: 3
+          paddingY: 3,
         }}
       >
         <Styled.a href="/">
@@ -298,7 +285,7 @@ const BurgerNav = ({
           variant: "textStyles.modern",
           fontSize: 3,
           zIndex: 25,
-          left: 0
+          left: 0,
         }}
       >
         <Flex
@@ -306,7 +293,7 @@ const BurgerNav = ({
             width: "100%",
             flexDirection: "column",
             textAlign: "center",
-            zIndex: 5
+            zIndex: 5,
           }}
         >
           {links.map((link, i) => (
@@ -326,7 +313,7 @@ const BurgerNav = ({
             width: "100%",
             height: "100%",
             backgroundColor: "darkness",
-            opacity: "0.2"
+            opacity: "0.2",
           }}
         />
       </Box>

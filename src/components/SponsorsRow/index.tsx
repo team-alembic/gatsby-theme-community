@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Styled, Flex, Container } from "theme-ui";
+import { Box, Container, Flex, jsx, Styled } from "theme-ui";
 
 export interface Sponsor {
   id: string;
