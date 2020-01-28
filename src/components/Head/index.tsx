@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import Helmet from "react-helmet";
-import SiteYamlType from "../../types/siteYaml";
 import FrontmatterType from "../../types/frontmatter";
+import SiteYamlType from "../../types/siteYaml";
 
 export interface HeadProps {
   siteYaml: SiteYamlType;

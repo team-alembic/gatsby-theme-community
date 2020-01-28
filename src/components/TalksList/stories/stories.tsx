@@ -2,9 +2,9 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import { TalksList } from "../index";
-import { TalkProps } from "../../Talk/index";
 import SiteYamlType from "../../../types/siteYaml"
+import { TalkProps } from "../../Talk/index";
+import { TalksList } from "../index";
 
 import jamesImage from "./james.jpg";
 import paulImage from "./paul.jpg";

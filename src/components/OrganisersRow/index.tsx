@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Styled, Container } from "theme-ui";
+import { Box, Container, Flex, jsx, Styled } from "theme-ui";
 
 import { Avatar } from "../Avatar";
 

@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { Flex, jsx, Styled } from "theme-ui";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-common-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface IconButtonProps {
   eventLink: string;
@@ -37,7 +37,7 @@ export const IconButton = ({
     >
       <Flex sx={{ alignItems: "center", justifyContent: "center" }}>
         <FontAwesomeIcon
-          //TODO Temporary style tag - Need to incorporate FontAwesome into Theme-UI
+          // TODO Temporary style tag - Need to incorporate FontAwesome into Theme-UI
           style={{
             margin: "14px 16px 14px -5px",
             fontSize: "36px",

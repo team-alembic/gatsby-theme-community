@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { useState, ReactNode } from "react";
-import { jsx, Layout, Container, Box, Styled } from "theme-ui";
-import { Global, css } from "@emotion/core";
+import { css, Global } from "@emotion/core";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { ReactNode, useState } from "react";
+import { Box, Container, jsx, Layout, Styled } from "theme-ui";
+import SiteYamlType from "../../types/siteYaml";
 import { Footer } from "../Footer";
 import { HeaderNav } from "../HeaderNav";
-import SiteYamlType from "../../types/siteYaml";
 
 library.add(faCheckSquare, faCoffee);
 

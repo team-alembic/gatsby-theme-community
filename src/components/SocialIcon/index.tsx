@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
-import { jsx, Styled } from "theme-ui";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { jsx, Styled } from "theme-ui";
 
 export interface SocialIconProps {
   iconType: string;

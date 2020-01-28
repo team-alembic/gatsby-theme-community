@@ -12,8 +12,8 @@ export const DefaultHead = ({ siteYaml, children }: HeadProps) => {
   const { name, streetAddress, city, latitude, longitude } = location
 
   const seo = {
-    title: title,
-    description: description,
+    title,
+    description,
     url: siteUrl,
     image: defaultImage
   };

@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Box, Styled, Flex, Container } from "theme-ui";
+import { Box, Container, Flex, jsx, Styled } from "theme-ui";
 
-import { Talk, TalkProps } from "../Talk/index";
 import SiteYamlType from "../../types/siteYaml";
+import { Talk, TalkProps } from "../Talk/index";
 
 export interface TalksProps {
   talks: TalkProps[];

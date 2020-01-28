@@ -1,39 +1,37 @@
 /** @jsx jsx */
-import { useState, useEffect } from "react";
-import { jsx, Box, Flex, Styled } from "theme-ui";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
+import { Box, Flex, jsx, Styled } from "theme-ui";
 import SiteYamlType from "../../types/siteYaml";
 
 export interface SlideShowProps {
-  imageUrls: imageUrlProps[];
+  imageUrls: ImageUrlProps[];
   siteYaml: SiteYamlType;
 }
 
-interface imageUrlProps {
+interface ImageUrlProps {
   publicURL: string;
-  childImageSharp: ChildImageSharpProps
+  childImageSharp: ChildImageSharpProps;
 }
 
 interface ChildImageSharpProps {
-  fluid: FluidProps
+  fluid: FluidProps;
 }
 
 interface FluidProps {
-  src: string
+  src: string;
 }
 
 export const SlideShow = ({ imageUrls, siteYaml }: SlideShowProps) => {
   const [index, setIndex] = useState(0);
-  let images = undefined;
-  if (imageUrls === null) {
-    images = [siteYaml.defaultImage];
-  } else {
-    images = imageUrls.map((image:any) => siteYaml.siteUrl + image.childImageSharp.fluid.src)
-  }
+  const images =
+    imageUrls === null
+      ? [siteYaml.defaultImage]
+      : imageUrls.map((image: any) => siteYaml.siteUrl + image.childImageSharp.fluid.src);
 
   // const images = imageLinks.map((image:any) => siteUrl + image.childImageSharp.fluid.src)
   /* images = imageUrls.map((image:any) => siteYaml.siteUrl + image.childImageSharp.fluid.src) */
-  
+
   const handleNext = () => {
     index === images.length - 1 ? setIndex(0) : setIndex(index + 1);
   };
@@ -49,13 +47,10 @@ export const SlideShow = ({ imageUrls, siteYaml }: SlideShowProps) => {
         paddingX: [4, 4, 10],
         paddingY: 3,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
       }}
     >
-      <Box
-        onClick={handlePrevious}
-        sx={{ cursor: "pointer", visibility: showPrevious }}
-      >
+      <Box onClick={handlePrevious} sx={{ cursor: "pointer", visibility: showPrevious }}>
         <FontAwesomeIcon
           icon={["fas", "chevron-left"]}
           css={{ color: "rgb(33,16,75)", fontSize: 50, paddingRight: 10 }}
@@ -66,8 +61,8 @@ export const SlideShow = ({ imageUrls, siteYaml }: SlideShowProps) => {
           backgroundImage: `url(${images[index]})`,
           height: [200, 400, 400],
           width: "80%",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       />
       <Box onClick={handleNext} sx={{ cursor: "pointer", visibility: showNext }}>
