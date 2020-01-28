@@ -60,13 +60,13 @@ export const HeroEventMeetup = ({ heading, date, time, children }: HeroProps) =>
         flexWrap: ["wrap", "nowrap", "nowrap"],
         paddingTop: "70px",
         height: ["100vh", "100vh", "100vh", "100vh", "70vh"],
-        minHeight: "550px",
+        minHeight: "550px"
       }}
     >
       <Flex
         sx={{
           flexDirection: "column",
-          alignItems: ["center", "baseline", "baseline"],
+          alignItems: ["center", "baseline", "baseline"]
         }}
       >
         <Logo size="large" logoUrl={data.logo.publicURL} />
@@ -77,7 +77,7 @@ export const HeroEventMeetup = ({ heading, date, time, children }: HeroProps) =>
             minHeight: "250px",
             justifyContent: "space-between",
             width: "100%",
-            margin: "auto",
+            margin: "auto"
           }}
         >
           <SubHeadingBox>
@@ -102,7 +102,7 @@ export const HeroEventMeetup = ({ heading, date, time, children }: HeroProps) =>
             sx={{
               justifyContent: ["center", "center", "center"],
               flexDirection: ["column", "row", "row"],
-              textAlign: "center",
+              textAlign: "center"
             }}
           >
             <Box>
@@ -134,7 +134,7 @@ const Heading = ({ children }: ChildrenProps) => (
       color: "background",
       variant: "textStyles.heading",
       marginY: 3,
-      fontWeight: "body",
+      fontWeight: "body"
     }}
   >
     {children}
@@ -146,7 +146,7 @@ const SubHeadingBox = ({ children }: ChildrenProps) => (
     sx={{
       flexDirection: ["row", "row", "row"],
       paddingX: 3,
-      paddingY: [1, 1, 1],
+      paddingY: [1, 1, 1]
     }}
   >
     {children}
@@ -169,7 +169,7 @@ const SubHeading = ({ children, position, weight }: SubHeadingProps) => (
       marginY: position === ("right" || "left") ? "0" : "auto",
       font: "heading",
       fontWeight: weight,
-      paddingX: 3,
+      paddingX: 3
     }}
   >
     {children}

@@ -23,7 +23,7 @@ const Events = () => {
               marginX: [5, 5, 5],
               marginY: [5, 5, 5],
               textAlign: "center",
-              fontWeight: "body",
+              fontWeight: "body"
             }}
           >
             {siteYaml.eventsTitle}
@@ -33,7 +33,7 @@ const Events = () => {
               flexWrap: ["nowrap", "wrap", "wrap"],
               flexDirection: ["column", "column", "row"],
               justifyContent: "center",
-              alignItems: "center",
+              alignItems: "center"
             }}
           >
             {allEventMdx.edges.map((event: Event, index: number) => {

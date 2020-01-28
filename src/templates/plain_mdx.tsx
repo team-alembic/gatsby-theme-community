@@ -12,8 +12,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export default ({
   data: {
-    pageMdx: { title, body },
-  },
+    pageMdx: { title, body }
+  }
 }) => {
   return (
     <Head page={title}>
@@ -23,7 +23,7 @@ export default ({
             sx={{
               flexDirection: "column",
               paddingX: 5,
-              fontSize: [2, 2, 3],
+              fontSize: [2, 2, 3]
             }}
           >
             <MDXRenderer>{body}</MDXRenderer>

@@ -57,14 +57,14 @@ export const HeaderNav = ({ togglePageFix, page }: HeaderNavProps) => {
         backgroundColor: page === "Home" ? headerBg : "headerOpaque",
         transition: ".6s",
         paddingX: [4, 4, 5],
-        paddingY: 3,
+        paddingY: 3
       }}
     >
       <BurgerNav
         togglePageFix={togglePageFix}
         links={headerNav.map(link => ({
           description: link.description,
-          href: link.href,
+          href: link.href
         }))}
         logo={logo}
         page={page}
@@ -76,7 +76,7 @@ export const HeaderNav = ({ togglePageFix, page }: HeaderNavProps) => {
         title={title}
         links={headerNav.map(link => ({
           description: link.description,
-          href: link.href,
+          href: link.href
         }))}
       />
     </Box>
@@ -97,7 +97,7 @@ const Navbar = ({ links, logo, page, title }: NavbarProps) => {
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
-          paddingY: 3,
+          paddingY: 3
         }}
       >
         <Styled.a href="/">
@@ -110,14 +110,14 @@ const Navbar = ({ links, logo, page, title }: NavbarProps) => {
           css={{
             a: {
               opacity: 0.8,
-              transition: ".4s",
+              transition: ".4s"
             },
             "&:hover > a": {
-              opacity: 1,
+              opacity: 1
             },
             "&:hover > a:not(:hover)": {
-              opacity: ".5",
-            },
+              opacity: ".5"
+            }
           }}
         >
           {links.map((link: LinkProps, i: number) => (
@@ -125,7 +125,7 @@ const Navbar = ({ links, logo, page, title }: NavbarProps) => {
               key={i}
               href={link.href}
               sx={{
-                textDecoration: "none",
+                textDecoration: "none"
               }}
             >
               <HeaderLink>{link.description.toUpperCase()}</HeaderLink>
@@ -172,7 +172,7 @@ const HeaderLogo = ({ logo, page, children }: HeaderLogoProps) => {
           display: "inline-block",
           verticalAlign: "super",
           marginLeft: "20px",
-          transition: ".6s opacity",
+          transition: ".6s opacity"
         }}
       >
         {children}
@@ -195,7 +195,7 @@ const HeaderLink = ({ children }: ChildrenProps) => (
       marginX: [4, 4, 5],
       letterSpacing: [0, 0, "1px"],
       fontWeight: "light",
-      font: "modern",
+      font: "modern"
     }}
   >
     {children}
@@ -207,7 +207,7 @@ const BurgerLink = ({ children }: ChildrenProps) => (
     sx={{
       variant: "borderStyles.veryLightBorderTop",
       width: "100%",
-      padding: 4,
+      padding: 4
     }}
   >
     <Styled.p
@@ -222,8 +222,8 @@ const BurgerLink = ({ children }: ChildrenProps) => (
         "&:hover": {
           color: "background",
           backgroundColor: "elixirLight",
-          variant: "boxShadowStyles.mediumShadow",
-        },
+          variant: "boxShadowStyles.mediumShadow"
+        }
       }}
     >
       {children}
@@ -239,7 +239,7 @@ const IconBar = () => (
       marginY: "6px",
       backgroundColor: "background",
       opacity: 0.8,
-      borderRadius: 4,
+      borderRadius: 4
     }}
   />
 );
@@ -284,7 +284,7 @@ const BurgerNav = ({ links, togglePageFix, title, logo, page }: BurgerNavProps) 
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
-          paddingY: 3,
+          paddingY: 3
         }}
       >
         <Styled.a href="/">
@@ -304,7 +304,7 @@ const BurgerNav = ({ links, togglePageFix, title, logo, page }: BurgerNavProps) 
           variant: "textStyles.modern",
           fontSize: 3,
           zIndex: 25,
-          left: 0,
+          left: 0
         }}
       >
         <Flex
@@ -312,7 +312,7 @@ const BurgerNav = ({ links, togglePageFix, title, logo, page }: BurgerNavProps) 
             width: "100%",
             flexDirection: "column",
             textAlign: "center",
-            zIndex: 5,
+            zIndex: 5
           }}
         >
           {links.map((link, i) => (
@@ -332,7 +332,7 @@ const BurgerNav = ({ links, togglePageFix, title, logo, page }: BurgerNavProps) 
             width: "100%",
             height: "100%",
             backgroundColor: "darkness",
-            opacity: "0.2",
+            opacity: "0.2"
           }}
         />
       </Box>

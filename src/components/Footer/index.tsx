@@ -42,7 +42,7 @@ export const Footer = () => {
         width: "100%",
         height: [580, 650, 650],
         alignItems: "flex-end",
-        position: "relative",
+        position: "relative"
       }}
     >
       <Flex
@@ -54,7 +54,7 @@ export const Footer = () => {
           left: 0,
           zIndex: 5,
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: "center"
         }}
       >
         <Flex
@@ -64,7 +64,7 @@ export const Footer = () => {
             backgroundColor: "background",
             variant: "boxShadowStyles.darkerShadow",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "center"
           }}
         >
           <FooterMessage siteYaml={siteYaml} />
@@ -78,7 +78,7 @@ export const Footer = () => {
           background: (theme: any) =>
             `linear-gradient(180deg,
             ${theme.colors.headerOpaque}, ${theme.colors.brandDark})`,
-          alignItems: "flex-end",
+          alignItems: "flex-end"
         }}
       >
         <Flex
@@ -86,7 +86,7 @@ export const Footer = () => {
             color: "background",
             width: "100%",
             height: ["38%", "38%", "38%"],
-            justifyContent: "center",
+            justifyContent: "center"
           }}
         >
           <Flex sx={{ flexDirection: "column", textAlign: "center" }}>
@@ -113,13 +113,13 @@ const FooterMessage = ({ siteYaml }: FooterMessageProps) => {
     iconKeyword2,
     iconLink2,
     iconKeyword3,
-    iconLink3,
+    iconLink3
   } = siteYaml.footer;
   return (
     <Flex
       sx={{
         flexDirection: "column",
-        textAlign: "center",
+        textAlign: "center"
       }}
     >
       <Styled.p sx={{ fontSize: 4, marginY: 0, fontWeight: "bold", paddingX: 6 }}>
@@ -131,7 +131,7 @@ const FooterMessage = ({ siteYaml }: FooterMessageProps) => {
           marginTop: 2,
           marginBottom: 4,
           fontWeight: "bold",
-          paddingX: 6,
+          paddingX: 6
         }}
       >
         {message2}

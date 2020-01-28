@@ -42,7 +42,7 @@ export const Head = ({ children, page, seo }: HeadProps) => {
       title,
       description,
       url: siteUrl,
-      image: defaultImage,
+      image: defaultImage
     };
   }
 

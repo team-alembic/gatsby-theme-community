@@ -12,7 +12,7 @@ export const Banner = ({ backgroundImageUrl }: BannerProps) => (
       backgroundSize: `cover`,
       backgroundPosition: "center",
       height: "300px",
-      margin: "0px",
+      margin: "0px"
     }}
   />
 );

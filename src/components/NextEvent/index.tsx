@@ -25,7 +25,7 @@ export const NextEvent = ({ title, body }: NextEventProps) => {
       <Flex
         sx={{
           flexDirection: ["column", "column", "row"],
-          margin: 5,
+          margin: 5
         }}
       >
         <Styled.div
@@ -35,33 +35,33 @@ export const NextEvent = ({ title, body }: NextEventProps) => {
             height: ["500px", "400px", "auto"],
             backgroundSize: "cover",
             borderRadius: "14px",
-            marginBottom: "20px",
+            marginBottom: "20px"
           }}
         />
         <Flex
           sx={{
             flexDirection: "column",
             width: "100%",
-            marginLeft: [0, 0, 40],
+            marginLeft: [0, 0, 40]
           }}
         >
           <Styled.h4
             sx={{
               margin: 1,
-              fontWeight: "normal",
+              fontWeight: "normal"
             }}
           />
           <Styled.h3
             sx={{
               margin: 1,
-              font: "body",
+              font: "body"
             }}
           >
             {title}
           </Styled.h3>
           <Flex
             sx={{
-              flexDirection: "column",
+              flexDirection: "column"
             }}
           >
             <MDXRenderer>{body}</MDXRenderer>

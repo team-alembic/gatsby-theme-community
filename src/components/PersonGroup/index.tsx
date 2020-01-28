@@ -44,7 +44,7 @@ const Heading = ({ children }: ChildrenProps) => (
     sx={{
       variant: "textStyles.title",
       margin: 0,
-      paddingBottom: [4, 6, 6],
+      paddingBottom: [4, 6, 6]
     }}
   >
     {children}
@@ -54,7 +54,7 @@ const Heading = ({ children }: ChildrenProps) => (
 const PersonBox = ({ children }: ChildrenProps) => (
   <Flex
     sx={{
-      padding: 3,
+      padding: 3
     }}
   >
     {children}
@@ -66,7 +66,7 @@ const TextBox = ({ children }: ChildrenProps) => (
     sx={{
       flexDirection: "column",
       justifyContent: "center",
-      paddingLeft: 4,
+      paddingLeft: 4
     }}
   >
     {children}
@@ -79,7 +79,7 @@ const Name = ({ children }: ChildrenProps) => (
       margin: 0,
       variant: "textStyles.modern",
       color: "mutedText",
-      fontSize: [3, 3, 3],
+      fontSize: [3, 3, 3]
     }}
   >
     {children}
@@ -91,7 +91,7 @@ const Description = ({ children }: ChildrenProps) => (
     sx={{
       margin: 0,
       fontFamily: "modern",
-      fontSize: [1, 2, 2],
+      fontSize: [1, 2, 2]
     }}
   >
     {children}

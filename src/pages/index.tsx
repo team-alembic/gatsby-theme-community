@@ -13,7 +13,7 @@ import {
   PageInformation,
   PageLayout,
   SponsorsGroup,
-  TalksList,
+  TalksList
 } from "../components";
 
 library.add(faMeetup, faTwitter, faGithub);
@@ -27,7 +27,7 @@ const Home = () => {
   const {
     sponsorsTitle,
     organisersTitle,
-    pageInformation: { heading1, paragraph1 },
+    pageInformation: { heading1, paragraph1 }
   } = data.siteYaml;
 
   return (

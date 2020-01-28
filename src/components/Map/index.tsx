@@ -18,7 +18,7 @@ export const Map = ({ srcUrl, address }: MapProps) => (
       flexDirection: "column",
       borderRadius: 3,
       overflow: "hidden",
-      backgroundColor: "background",
+      backgroundColor: "background"
     }}
   >
     <Box
@@ -29,7 +29,7 @@ export const Map = ({ srcUrl, address }: MapProps) => (
       allowFullScreen={true}
       sx={{
         height: [13, 13, 13],
-        width: [13, 13, 13],
+        width: [13, 13, 13]
       }}
     />
     <Styled.p
@@ -40,7 +40,7 @@ export const Map = ({ srcUrl, address }: MapProps) => (
         textAlign: "center",
         color: "mutedText",
         paddingY: 4,
-        fontFamily: "modern",
+        fontFamily: "modern"
       }}
     >
       {address}

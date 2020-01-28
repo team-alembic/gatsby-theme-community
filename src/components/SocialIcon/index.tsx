@@ -31,8 +31,8 @@ export const SocialIcon = ({ iconType, iconKeyword, iconUrl }: SocialIconProps) 
         "&:hover": {
           color: "#ac30ff",
           webkitTransform: "scale(1.1)",
-          transform: "scale(1.1)",
-        },
+          transform: "scale(1.1)"
+        }
       }}
     />
   </Styled.a>

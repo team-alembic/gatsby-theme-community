@@ -37,7 +37,7 @@ export const PageLayout = ({ page, children }: PageLayoutProps) => {
             position: "fixed",
             maxWidth: "100%",
             padding: "0px",
-            zIndex: "100",
+            zIndex: "100"
           }}
         >
           <HeaderNav togglePageFix={togglePageFix} page={page} />

@@ -11,14 +11,14 @@ const people: Person[] = [
     name: "James Sadler",
     avatarUrl: jamesImage,
     company: "Alembic",
-    companyUrl: "https://alembic.com.au",
+    companyUrl: "https://alembic.com.au"
   },
   {
     name: "Paul Fioravanti",
     avatarUrl: paulImage,
     company: "Alembic",
-    companyUrl: "https://alembic.com.au",
-  },
+    companyUrl: "https://alembic.com.au"
+  }
 ];
 
 storiesOf("PersonGroup", module).add("example", () => {

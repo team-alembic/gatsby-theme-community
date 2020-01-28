@@ -52,7 +52,7 @@ export const SlideShow = ({ imageUrls }: SlideShowProps) => {
         paddingX: [4, 4, 10],
         paddingY: 3,
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center"
       }}
     >
       <Box onClick={handlePrevious} sx={{ cursor: "pointer", visibility: showPrevious }}>
@@ -67,7 +67,7 @@ export const SlideShow = ({ imageUrls }: SlideShowProps) => {
           height: [200, 400, 400],
           width: "80%",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center"
         }}
       />
       <Box onClick={handleNext} sx={{ cursor: "pointer", visibility: showNext }}>

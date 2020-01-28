@@ -22,7 +22,7 @@ export const EventCard = ({ title, slug, date, body, image, description }: Event
   return (
     <Styled.a
       sx={{
-        textDecoration: "none",
+        textDecoration: "none"
       }}
       href={slug}
     >
@@ -34,9 +34,9 @@ export const EventCard = ({ title, slug, date, body, image, description }: Event
           "&:hover": {
             transform: "translateY(-3px)",
             transition: "0.3s",
-            variant: "boxShadowStyles.hoverShadow",
+            variant: "boxShadowStyles.hoverShadow"
           },
-          "&:not(:hover)": { transform: "translateY(3px)", transition: "0.3s" },
+          "&:not(:hover)": { transform: "translateY(3px)", transition: "0.3s" }
         }}
       >
         <Styled.img
@@ -46,7 +46,7 @@ export const EventCard = ({ title, slug, date, body, image, description }: Event
             height: 12,
             objectFit: "cover",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center"
           }}
         />
         <Box sx={{ padding: 4 }}>
@@ -60,7 +60,7 @@ export const EventCard = ({ title, slug, date, body, image, description }: Event
               marginBottom: 2,
               fontSize: 2,
               fontWeight: "bold",
-              color: "#00ace6",
+              color: "#00ace6"
             }}
           >
             Show More <FontAwesomeIcon icon={["fas", "chevron-right"]} css={{ color: "#ff9900" }} />

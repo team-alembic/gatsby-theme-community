@@ -14,7 +14,7 @@ export const MapDescription = ({ mapUrl, address, name, instructions }: MapDescr
     sx={{
       paddingX: [3, 6, 7],
       paddingY: [5, 5, 7],
-      justifyContent: "center",
+      justifyContent: "center"
     }}
   >
     <Container sx={{ justifyContent: "center" }}>
@@ -22,7 +22,7 @@ export const MapDescription = ({ mapUrl, address, name, instructions }: MapDescr
         sx={{
           margin: [5, 5, "0 0 -50px 0"],
           fontWeight: 100,
-          textAlign: ["center", "center", "left"],
+          textAlign: ["center", "center", "left"]
         }}
       >
         Where to find us
@@ -33,7 +33,7 @@ export const MapDescription = ({ mapUrl, address, name, instructions }: MapDescr
           width: "90%",
           margin: "auto",
           flexDirection: ["column-reverse", "column-reverse", "row"],
-          alignItems: "center",
+          alignItems: "center"
         }}
       >
         <Flex sx={{ alignItems: "center", width: "90%" }}>
@@ -42,7 +42,7 @@ export const MapDescription = ({ mapUrl, address, name, instructions }: MapDescr
               marginTop: [6, 6, 0],
               flexDirection: ["column", "column", "row"],
               textAlign: ["center", "center", "left"],
-              alignItems: ["center", "center", "flex-start"],
+              alignItems: ["center", "center", "flex-start"]
             }}
           >
             <Marker />
@@ -50,7 +50,7 @@ export const MapDescription = ({ mapUrl, address, name, instructions }: MapDescr
               sx={{
                 flexDirection: "column",
                 marginX: [2, 3, 3],
-                width: ["100%", "100%", "80%"],
+                width: ["100%", "100%", "80%"]
               }}
             >
               <Styled.h3 sx={{ margin: 0, fontSize: 4 }}>{name}</Styled.h3>

@@ -28,7 +28,7 @@ export const TalksList = ({ talks }: TalksProps) => {
     <Flex
       sx={{
         backgroundColor: "lightness",
-        justifyContent: "center",
+        justifyContent: "center"
       }}
     >
       <Container sx={{ justifyContent: "center" }}>
@@ -46,7 +46,7 @@ export const TalksList = ({ talks }: TalksProps) => {
                   sx={{
                     textDecoration: "none",
                     color: "mutedText",
-                    fontWeight: "bold",
+                    fontWeight: "bold"
                   }}
                   href={email.match(/@/) ? `mailto:${email}` : email}
                 >
@@ -72,7 +72,7 @@ const Heading = ({ children }: ChildrenProps) => (
       variant: "textStyles.body",
       textAlign: "center",
       fontSize: 5,
-      fontWeight: "body",
+      fontWeight: "body"
     }}
   >
     {children}
@@ -87,7 +87,7 @@ const EmailActionBox = ({ children }: ChildrenProps) => (
       paddingX: 4,
       paddingY: 7,
       textAlign: "center",
-      marginTop: 4,
+      marginTop: 4
     }}
   >
     {children}
@@ -101,7 +101,7 @@ const Title = ({ children }: ChildrenProps) => (
       variant: "textStyles.modern",
       color: "mutedText",
       fontSize: 4,
-      fontWeight: "bold",
+      fontWeight: "bold"
     }}
   >
     {children}
@@ -114,7 +114,7 @@ const SecondaryTitle = ({ children }: ChildrenProps) => (
       margin: 0,
       fontFamily: "modern",
       color: "mutedText",
-      fontSize: 2,
+      fontSize: 2
     }}
   >
     {children}

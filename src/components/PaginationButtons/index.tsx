@@ -31,7 +31,7 @@ export const PaginationButtons = ({ next, previous }: PaginationButtonsProps) =>
           justifyContent: "flex-start",
           display: "inline-block",
           variant: "linkStyles.buttonDefault",
-          color: "text",
+          color: "text"
         }}
         to={previousPath}
       >
@@ -40,7 +40,7 @@ export const PaginationButtons = ({ next, previous }: PaginationButtonsProps) =>
             sx={{
               fontSize: 4,
               alignItems: "center",
-              display: "flex",
+              display: "flex"
             }}
           >
             <FontAwesomeIcon
@@ -57,7 +57,7 @@ export const PaginationButtons = ({ next, previous }: PaginationButtonsProps) =>
           alignItems: "center",
           display: displayNext,
           variant: "linkStyles.buttonDefault",
-          color: "text",
+          color: "text"
         }}
         to={nextPath}
       >
@@ -65,7 +65,7 @@ export const PaginationButtons = ({ next, previous }: PaginationButtonsProps) =>
           sx={{
             fontSize: 4,
             alignItems: "center",
-            display: "flex",
+            display: "flex"
           }}
         >
           {siteYaml.paginationButtons.next}

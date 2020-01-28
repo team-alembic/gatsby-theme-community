@@ -13,7 +13,7 @@ import {
   PaginationButtons,
   SlideShow,
   SponsorsGroup,
-  TalksList,
+  TalksList
 } from "../components";
 
 library.add(faMeetup, faTwitter, faGithub, faChevronRight, faChevronLeft);
@@ -28,7 +28,7 @@ export default ({ data: { siteYaml, eventMdx }, pageContext: { next, previous } 
     title: eventMdx.title,
     descrition: eventMdx.description,
     url: eventMdx.urlEvent,
-    image: eventMdx.mainImage,
+    image: eventMdx.mainImage
   };
 
   return (
@@ -41,12 +41,12 @@ export default ({ data: { siteYaml, eventMdx }, pageContext: { next, previous } 
             sx={{
               flexDirection: "column",
               justifyContent: "center",
-              alignItems: "center",
+              alignItems: "center"
             }}
           >
             <Styled.h1
               sx={{
-                marginY: 6,
+                marginY: 6
               }}
             >
               {eventMdx.title}
@@ -54,7 +54,7 @@ export default ({ data: { siteYaml, eventMdx }, pageContext: { next, previous } 
             <Flex
               sx={{
                 flexDirection: "column",
-                width: ["100%", "68%", "68%"],
+                width: ["100%", "68%", "68%"]
               }}
             >
               <Styled.h4 sx={{ marginTop: 3 }}>{eventMdx.date}</Styled.h4>

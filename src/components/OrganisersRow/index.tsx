@@ -17,7 +17,7 @@ export const OrganisersRow = ({ organisersTitle, people }: OrganisersRowProps) =
         <Flex
           sx={{
             width: "100%",
-            flexDirection: "column",
+            flexDirection: "column"
           }}
         >
           <Heading>{organisersTitle} </Heading>
@@ -25,7 +25,7 @@ export const OrganisersRow = ({ organisersTitle, people }: OrganisersRowProps) =
             sx={{
               flexWrap: "wrap",
               justifyContent: "center",
-              alignItems: "center",
+              alignItems: "center"
             }}
           >
             {people.map((person: Person, i: number) => (
@@ -59,7 +59,7 @@ const PersonBox = ({ children }: ChildrenProps) => (
       alignItems: "center",
       width: "33.3%",
       justifyContent: ["flex-start", "center", "center"],
-      minWidth: 250,
+      minWidth: 250
     }}
   >
     {children}
@@ -70,7 +70,7 @@ const TextBox = ({ children }: ChildrenProps) => (
   <Flex
     sx={{
       paddingLeft: 4,
-      flexDirection: "column",
+      flexDirection: "column"
     }}
   >
     {children}
@@ -86,7 +86,7 @@ const Heading = ({ children }: ChildrenProps) => (
       paddingTop: 5,
       fontSize: 5,
       fontWeight: "body",
-      textAlign: "center",
+      textAlign: "center"
     }}
   >
     {children}
@@ -99,7 +99,7 @@ const Name = ({ children }: ChildrenProps) => (
       margin: 0,
       variant: "textStyles.modern",
       color: "mutedText",
-      fontSize: [3, 3, 3],
+      fontSize: [3, 3, 3]
     }}
   >
     {children}
@@ -111,7 +111,7 @@ const Description = ({ children }: ChildrenProps) => (
     sx={{
       margin: 0,
       fontFamily: "modern",
-      fontSize: [1, 2, 2],
+      fontSize: [1, 2, 2]
     }}
   >
     {children}
