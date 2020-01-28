@@ -1,4 +1,3 @@
-// tslint:disable-next-line
 import { storiesOf } from "@storybook/react";
 
 import React from "react";

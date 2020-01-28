@@ -1,11 +1,6 @@
 /** @jsx jsx */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Flex, jsx, Styled } from "theme-ui";
-<<<<<<< HEAD
-import SiteYamlType from "../../types/siteYaml";
-=======
->>>>>>> Improve Theme
-// import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export interface EventCardProps {
   title: string;
