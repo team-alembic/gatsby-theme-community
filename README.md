@@ -7,10 +7,10 @@ yarn install
 ```
 
 # Linter
-That repo is using [TSLint](https://palantir.github.io/tslint/) into the CI and [Prettier](https://prettier.io/) into the IDE
-`tslint.json` and `tsconfig.json` are used for `TSLint` and `.prettierrc` for `Prettier`
+That repo uses [TSLint](https://palantir.github.io/tslint/) in CI and [Prettier](https://prettier.io/) for editor-based syntax checking
+See `tslint.json` and `tsconfig.json` files for `TSLint` config and `.prettierrc` for `Prettier` config
 
-# Custom the Gatsby Theme Community
+# Customize the Gatsby Theme Community
 To know more about how Gatsby Theme works, see [Building Themes](https://www.gatsbyjs.org/docs/themes/building-themes/)
 
 # Create new community website
@@ -65,7 +65,7 @@ yarn develop
 ```
 
 # Change content
-All data is been into `content` folder:
+All data is contained in the `content` folder:
 - `assets` images used by the theme
 - `events` mdx render by `gatsby-theme-community/src/templates/event.tsx`
 - `pages` mdx render by `gatsby-theme-community/src/templates/plain_mdx.tsx`
