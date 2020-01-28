@@ -1,5 +1,6 @@
 import React from "react";
 
+// tslint:disable-next-line
 import { storiesOf } from "@storybook/react";
 
 import { Talk, TalkProps } from "..";
@@ -11,22 +12,22 @@ const fullTalk: TalkProps = {
   title: "Fun with TypeScript",
   speaker: {
     name: "James Sadler",
-    avatarUrl: jamesImage
+    avatarUrl: jamesImage,
   },
   description:
     "In a format we've blatantly stolen borrowed from the end of year Cocoaheads trivia festival, we'll be throwing random questions at you which will stretch your noodles and maybe even teach you some interesting facts about Elixir or Erlang. Or maybe just programming in general.",
   videoUrl: "https://www.youtube.com/watch?v=xTUK3uhFnlU",
-  slidesUrl: "https://speakerdeck.com/joshprice/elixir-performance-tuning"
+  slidesUrl: "https://speakerdeck.com/joshprice/elixir-performance-tuning",
 };
 
 const noResourcesTalk: TalkProps = {
   title: "Fun with TypeScript",
   speaker: {
     name: "Paul Fioravanti",
-    avatarUrl: paulImage
+    avatarUrl: paulImage,
   },
   description:
-    "In a format we've blatantly stolen borrowed from the end of year Cocoaheads trivia festival, we'll be throwing random questions at you which will stretch your noodles and maybe even teach you some interesting facts about Elixir or Erlang. Or maybe just programming in general."
+    "In a format we've blatantly stolen borrowed from the end of year Cocoaheads trivia festival, we'll be throwing random questions at you which will stretch your noodles and maybe even teach you some interesting facts about Elixir or Erlang. Or maybe just programming in general.",
 };
 
 storiesOf("Talk", module)
@@ -38,9 +39,6 @@ storiesOf("Talk", module)
     />
   ))
   .add("video icon only", () => (
-    <Talk
-      {...noResourcesTalk}
-      videoUrl="https://www.youtube.com/watch?v=xTUK3uhFnlU"
-    />
+    <Talk {...noResourcesTalk} videoUrl="https://www.youtube.com/watch?v=xTUK3uhFnlU" />
   ))
   .add("no icons", () => <Talk {...noResourcesTalk} />);

@@ -1,21 +1,34 @@
 /** @jsx jsx */
 import { Box, Container, Flex, jsx, Styled } from "theme-ui";
 
-import SiteYamlType from "../../types/siteYaml";
+import { graphql, useStaticQuery } from "gatsby";
 import { Talk, TalkProps } from "../Talk/index";
 
 export interface TalksProps {
   talks: TalkProps[];
-  siteYaml: SiteYamlType;
 }
 
-export const TalksList = ({ talks, siteYaml }: TalksProps) => {
+export const TalksList = ({ talks }: TalksProps) => {
+  const { siteYaml } = useStaticQuery(graphql`
+    {
+      siteYaml {
+        talks {
+          title
+          line1
+          line2
+          email
+        }
+      }
+    }
+  `);
+
   const { title, line1, line2, email } = siteYaml.talks;
+
   return (
     <Flex
       sx={{
         backgroundColor: "lightness",
-        justifyContent: "center"
+        justifyContent: "center",
       }}
     >
       <Container sx={{ justifyContent: "center" }}>
@@ -33,7 +46,7 @@ export const TalksList = ({ talks, siteYaml }: TalksProps) => {
                   sx={{
                     textDecoration: "none",
                     color: "mutedText",
-                    fontWeight: "bold"
+                    fontWeight: "bold",
                   }}
                   href={email.match(/@/) ? `mailto:${email}` : email}
                 >
@@ -59,7 +72,7 @@ const Heading = ({ children }: ChildrenProps) => (
       variant: "textStyles.body",
       textAlign: "center",
       fontSize: 5,
-      fontWeight: "body"
+      fontWeight: "body",
     }}
   >
     {children}
@@ -74,7 +87,7 @@ const EmailActionBox = ({ children }: ChildrenProps) => (
       paddingX: 4,
       paddingY: 7,
       textAlign: "center",
-      marginTop: 4
+      marginTop: 4,
     }}
   >
     {children}
@@ -88,7 +101,7 @@ const Title = ({ children }: ChildrenProps) => (
       variant: "textStyles.modern",
       color: "mutedText",
       fontSize: 4,
-      fontWeight: "bold"
+      fontWeight: "bold",
     }}
   >
     {children}
@@ -101,7 +114,7 @@ const SecondaryTitle = ({ children }: ChildrenProps) => (
       margin: 0,
       fontFamily: "modern",
       color: "mutedText",
-      fontSize: 2
+      fontSize: 2,
     }}
   >
     {children}

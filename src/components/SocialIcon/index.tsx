@@ -9,11 +9,7 @@ export interface SocialIconProps {
   iconUrl: string;
 }
 
-export const SocialIcon = ({
-  iconType,
-  iconKeyword,
-  iconUrl
-}: SocialIconProps) => (
+export const SocialIcon = ({ iconType, iconKeyword, iconUrl }: SocialIconProps) => (
   <Styled.a href={iconUrl} target="_blank">
     <FontAwesomeIcon
       // @ts-ignore
@@ -35,8 +31,8 @@ export const SocialIcon = ({
         "&:hover": {
           color: "#ac30ff",
           webkitTransform: "scale(1.1)",
-          transform: "scale(1.1)"
-        }
+          transform: "scale(1.1)",
+        },
       }}
     />
   </Styled.a>

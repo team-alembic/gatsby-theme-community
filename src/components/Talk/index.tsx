@@ -21,22 +21,14 @@ export interface TalkProps {
   slidesUrl?: string;
 }
 
-export const Talk = ({
-  title,
-  speaker,
-  description,
-  videoUrl,
-  slidesUrl
-}: TalkProps) => {
+export const Talk = ({ title, speaker, description, videoUrl, slidesUrl }: TalkProps) => {
   return (
     <TalkBox>
       <Avatar size="large" image={speaker.avatarUrl} />
       <TextBox>
         <Speaker>{speaker.name}</Speaker>
         <Title>{title}</Title>
-        <Styled.p sx={{ fontSize: 2, paddingTop: 2, margin: 0 }}>
-          {description}
-        </Styled.p>
+        <Styled.p sx={{ fontSize: 2, paddingTop: 2, margin: 0 }}>{description}</Styled.p>
         <Flex>
           {videoUrl && <LinkIcon iconUrl={Video} linkUrl={videoUrl} />}
           {slidesUrl && <LinkIcon iconUrl={Slides} linkUrl={slidesUrl} />}
@@ -55,7 +47,7 @@ const TalkBox = ({ children }: ChildrenProps) => (
   <Flex
     sx={{
       flexDirection: ["column", "row", "row"],
-      padding: 4
+      padding: 4,
     }}
   >
     {children}
@@ -66,12 +58,8 @@ const BorderLine = () => (
   <Box
     sx={{
       width: 8,
-      borderTop: [
-        theme => `2px solid ${theme.colors.mutedText}`,
-        "none",
-        "none"
-      ],
-      marginTop: 5
+      borderTop: [theme => `2px solid ${theme.colors.mutedText}`, "none", "none"],
+      marginTop: 5,
     }}
   />
 );
@@ -82,7 +70,7 @@ const Speaker = ({ children }: ChildrenProps) => (
       margin: 0,
       color: "mutedText",
       fontSize: 4,
-      lineHeight: "tight"
+      lineHeight: "tight",
     }}
   >
     {children}
@@ -96,7 +84,7 @@ const Title = ({ children }: ChildrenProps) => (
       color: "mutedText",
       fontFamily: "modern",
       fontSize: 2,
-      fontWeight: "light"
+      fontWeight: "light",
     }}
   >
     {children}
@@ -114,8 +102,8 @@ const TextBox = ({ children }: ChildrenProps) => (
       borderLeft: [
         "none",
         theme => `2px solid ${theme.colors.mutedText}`,
-        theme => `2px solid ${theme.colors.mutedText}`
-      ]
+        theme => `2px solid ${theme.colors.mutedText}`,
+      ],
     }}
   >
     {children}

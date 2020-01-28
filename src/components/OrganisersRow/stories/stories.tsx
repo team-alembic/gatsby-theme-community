@@ -1,5 +1,6 @@
 import React from "react";
 
+// tslint:disable-next-line
 import { storiesOf } from "@storybook/react";
 
 import { OrganisersRow } from "../../OrganisersRow";
@@ -14,8 +15,8 @@ storiesOf("OrganisersRow", module).add("example", () => {
           avatarUrl:
             "https://a248.e.akamai.net/secure.meetupstatic.com/photos/member/4/5/c/e/member_12197870.jpeg",
           company: "Alembic",
-          companyUrl: "https://alembic.com.au/"
-        }
+          companyUrl: "https://alembic.com.au/",
+        },
       ]}
     />
   );

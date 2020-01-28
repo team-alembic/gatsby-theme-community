@@ -1,6 +1,6 @@
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-common-types";
 
-export default interface UseSiteYaml {
+export interface SiteYaml {
   title: string;
   logo: string;
   nextEventLine: string;

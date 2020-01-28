@@ -1,7 +1,10 @@
 /** @jsx jsx */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Flex, jsx, Styled } from "theme-ui";
+<<<<<<< HEAD
 import SiteYamlType from "../../types/siteYaml";
+=======
+>>>>>>> Improve Theme
 // import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export interface EventCardProps {
@@ -18,25 +21,13 @@ export interface EventCardProps {
   body: React.ReactNode;
   image: string;
   description: string;
-  siteYaml: SiteYamlType;
 }
 
-export const EventCard = ({
-  title,
-  slug,
-  date,
-  body,
-  image,
-  description,
-  siteYaml
-}: EventCardProps) => {
-  if (image === "null") {
-    image = siteYaml.defaultImage;
-  }
+export const EventCard = ({ title, slug, date, body, image, description }: EventCardProps) => {
   return (
     <Styled.a
       sx={{
-        textDecoration: "none"
+        textDecoration: "none",
       }}
       href={slug}
     >
@@ -48,9 +39,9 @@ export const EventCard = ({
           "&:hover": {
             transform: "translateY(-3px)",
             transition: "0.3s",
-            variant: "boxShadowStyles.hoverShadow"
+            variant: "boxShadowStyles.hoverShadow",
           },
-          "&:not(:hover)": { transform: "translateY(3px)", transition: "0.3s" }
+          "&:not(:hover)": { transform: "translateY(3px)", transition: "0.3s" },
         }}
       >
         <Styled.img
@@ -60,14 +51,12 @@ export const EventCard = ({
             height: 12,
             objectFit: "cover",
             backgroundSize: "cover",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
           }}
         />
         <Box sx={{ padding: 4 }}>
           <Styled.p sx={{ marginY: 1, color: "text" }}>{title}</Styled.p>
-          <Styled.p
-            sx={{ marginTop: 0, marginBottom: 2, fontSize: 2, color: "text" }}
-          >
+          <Styled.p sx={{ marginTop: 0, marginBottom: 2, fontSize: 2, color: "text" }}>
             {description}
           </Styled.p>
           <Styled.p
@@ -76,18 +65,13 @@ export const EventCard = ({
               marginBottom: 2,
               fontSize: 2,
               fontWeight: "bold",
-              color: "#00ace6"
+              color: "#00ace6",
             }}
           >
-            Show More{" "}
-            <FontAwesomeIcon
-              icon={["fas", "chevron-right"]}
-              css={{ color: "#ff9900" }}
-            />
+            Show More <FontAwesomeIcon icon={["fas", "chevron-right"]} css={{ color: "#ff9900" }} />
           </Styled.p>
         </Box>
       </Flex>
     </Styled.a>
   );
 };
-

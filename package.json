@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-community",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.18.18",

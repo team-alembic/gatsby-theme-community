@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
-import { Box, Flex, jsx, Styled } from "theme-ui";
-import SiteYamlType from "../../types/siteYaml";
+import { graphql, useStaticQuery } from "gatsby";
+import { useState } from "react";
+import { Box, Flex, jsx } from "theme-ui";
 
 export interface SlideShowProps {
   imageUrls: ImageUrlProps[];
-  siteYaml: SiteYamlType;
 }
 
 interface ImageUrlProps {
@@ -22,15 +21,21 @@ interface FluidProps {
   src: string;
 }
 
-export const SlideShow = ({ imageUrls, siteYaml }: SlideShowProps) => {
+export const SlideShow = ({ imageUrls }: SlideShowProps) => {
+  const { siteYaml } = useStaticQuery(graphql`
+    {
+      siteYaml {
+        defaultImage
+        siteUrl
+      }
+    }
+  `);
+
   const [index, setIndex] = useState(0);
   const images =
     imageUrls === null
       ? [siteYaml.defaultImage]
-      : imageUrls.map((image: any) => siteYaml.siteUrl + image.childImageSharp.fluid.src);
-
-  // const images = imageLinks.map((image:any) => siteUrl + image.childImageSharp.fluid.src)
-  /* images = imageUrls.map((image:any) => siteYaml.siteUrl + image.childImageSharp.fluid.src) */
+      : imageUrls.map((image: any) => image.childImageSharp.fluid.src);
 
   const handleNext = () => {
     index === images.length - 1 ? setIndex(0) : setIndex(index + 1);

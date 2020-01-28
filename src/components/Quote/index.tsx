@@ -16,12 +16,12 @@ export const Quote = ({ title, name, company, quote }: QuoteProps) => (
       padding: [5, 6, 7],
       fontFamily: "heading",
       fontSize: [2, 2, 3],
-      margin: 0
+      margin: 0,
     }}
   >
     <Flex
       sx={{
-        "& > * + *": { marginLeft: [4, 5, 6] }
+        "& > * + *": { marginLeft: [4, 5, 6] },
       }}
     >
       <QuoteMark />
@@ -30,7 +30,7 @@ export const Quote = ({ title, name, company, quote }: QuoteProps) => (
         <Styled.p
           sx={{
             margin: 0,
-            fontWeight: "bold"
+            fontWeight: "bold",
           }}
         >
           {name}

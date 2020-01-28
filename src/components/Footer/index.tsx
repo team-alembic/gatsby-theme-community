@@ -1,16 +1,40 @@
 /** @jsx jsx */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Flex, jsx, Styled } from "theme-ui";
-import SiteYamlType from "../../types/siteYaml";
+import { SiteYaml } from "../../types";
 
 import { IconButton } from "../buttons/index";
 import { SocialIcon } from "../SocialIcon";
 
-export interface FooterProps {
-  siteYaml: SiteYamlType;
-}
+import { graphql, useStaticQuery } from "gatsby";
 
-export const Footer = ({ siteYaml }: FooterProps) => {
+export const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allSiteYaml {
+        nodes {
+          title
+          headerNav {
+            description
+            href
+          }
+          footer {
+            copyright
+            message1
+            message2
+            iconType
+            iconKeyword1
+            iconLink1
+            iconKeyword2
+            iconLink2
+            iconKeyword3
+            iconLink3
+          }
+        }
+      }
+    }
+  `);
+  const siteYaml: SiteYaml = data.allSiteYaml.nodes[0];
   const { copyright } = siteYaml.footer;
   return (
     <Flex
@@ -18,7 +42,7 @@ export const Footer = ({ siteYaml }: FooterProps) => {
         width: "100%",
         height: [580, 650, 650],
         alignItems: "flex-end",
-        position: "relative"
+        position: "relative",
       }}
     >
       <Flex
@@ -30,7 +54,7 @@ export const Footer = ({ siteYaml }: FooterProps) => {
           left: 0,
           zIndex: 5,
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Flex
@@ -40,7 +64,7 @@ export const Footer = ({ siteYaml }: FooterProps) => {
             backgroundColor: "background",
             variant: "boxShadowStyles.darkerShadow",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           <FooterMessage siteYaml={siteYaml} />
@@ -54,7 +78,7 @@ export const Footer = ({ siteYaml }: FooterProps) => {
           background: (theme: any) =>
             `linear-gradient(180deg,
             ${theme.colors.headerOpaque}, ${theme.colors.brandDark})`,
-          alignItems: "flex-end"
+          alignItems: "flex-end",
         }}
       >
         <Flex
@@ -62,13 +86,11 @@ export const Footer = ({ siteYaml }: FooterProps) => {
             color: "background",
             width: "100%",
             height: ["38%", "38%", "38%"],
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <Flex sx={{ flexDirection: "column", textAlign: "center" }}>
-            <Styled.p sx={{ fontSize: 4, marginBottom: 0 }}>
-              {siteYaml.title}
-            </Styled.p>
+            <Styled.p sx={{ fontSize: 4, marginBottom: 0 }}>{siteYaml.title}</Styled.p>
             <Styled.p sx={{ fontSize: 2 }}>{copyright}</Styled.p>
           </Flex>
         </Flex>
@@ -78,21 +100,29 @@ export const Footer = ({ siteYaml }: FooterProps) => {
 };
 
 interface FooterMessageProps {
-  siteYaml: SiteYamlType;
+  siteYaml: SiteYaml;
 }
 
 const FooterMessage = ({ siteYaml }: FooterMessageProps) => {
-  const { message1, message2, iconType, iconKeyword1, iconLink1, iconKeyword2, iconLink2, iconKeyword3, iconLink3 } = siteYaml.footer;
+  const {
+    message1,
+    message2,
+    iconType,
+    iconKeyword1,
+    iconLink1,
+    iconKeyword2,
+    iconLink2,
+    iconKeyword3,
+    iconLink3,
+  } = siteYaml.footer;
   return (
     <Flex
       sx={{
         flexDirection: "column",
-        textAlign: "center"
+        textAlign: "center",
       }}
     >
-      <Styled.p
-        sx={{ fontSize: 4, marginY: 0, fontWeight: "bold", paddingX: 6 }}
-      >
+      <Styled.p sx={{ fontSize: 4, marginY: 0, fontWeight: "bold", paddingX: 6 }}>
         {message1}
       </Styled.p>
       <Styled.p
@@ -101,27 +131,15 @@ const FooterMessage = ({ siteYaml }: FooterMessageProps) => {
           marginTop: 2,
           marginBottom: 4,
           fontWeight: "bold",
-          paddingX: 6
+          paddingX: 6,
         }}
       >
         {message2}
       </Styled.p>
       <Box>
-        <SocialIcon
-          iconType={iconType}
-          iconKeyword={iconKeyword1}
-          iconUrl={iconLink1}
-        />
-        <SocialIcon
-          iconType={iconType}
-          iconKeyword={iconKeyword2}
-          iconUrl={iconLink2}
-        />
-        <SocialIcon
-          iconType={iconType}
-          iconKeyword={iconKeyword3}
-          iconUrl={iconLink3}
-        />
+        <SocialIcon iconType={iconType} iconKeyword={iconKeyword1} iconUrl={iconLink1} />
+        <SocialIcon iconType={iconType} iconKeyword={iconKeyword2} iconUrl={iconLink2} />
+        <SocialIcon iconType={iconType} iconKeyword={iconKeyword3} iconUrl={iconLink3} />
       </Box>
     </Flex>
   );

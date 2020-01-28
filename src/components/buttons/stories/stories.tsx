@@ -1,5 +1,6 @@
 import React from "react";
 
+// tslint:disable-next-line
 import { storiesOf } from "@storybook/react";
 
 import { IconButton } from "../index";

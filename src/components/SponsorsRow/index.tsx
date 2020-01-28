@@ -23,7 +23,7 @@ export const SponsorsGroup = ({ sponsorsTitle, sponsors }: SponsorsProps) => {
           justifyContent: "center",
           textAlign: "center",
           flexDirection: "column",
-          marginTop: 6
+          marginTop: 6,
         }}
       >
         <Heading>{sponsorsTitle}</Heading>
@@ -32,7 +32,7 @@ export const SponsorsGroup = ({ sponsorsTitle, sponsors }: SponsorsProps) => {
             justifyContent: "center",
             alignItems: ["null", "center", "center"],
             flexDirection: ["column", "row", "row"],
-            flexWrap: "wrap"
+            flexWrap: "wrap",
           }}
         >
           {sponsors.map((sponsor: Sponsor, i: number) => (
@@ -43,7 +43,7 @@ export const SponsorsGroup = ({ sponsorsTitle, sponsors }: SponsorsProps) => {
                   alt={`${sponsor.name}`}
                   sx={{
                     width: [12, 12, 12],
-                    margin: 2
+                    margin: 2,
                   }}
                 />
               </Styled.a>
@@ -66,7 +66,7 @@ const Heading = ({ children }: ChildrenProps) => (
       marginBottom: [5, 3, 3],
       variant: "textStyles.body",
       fontSize: 5,
-      fontWeight: "body"
+      fontWeight: "body",
     }}
   >
     {children}

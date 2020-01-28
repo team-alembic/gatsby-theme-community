@@ -17,7 +17,7 @@ export const IconButton = ({
   iconName,
   iconPrefix,
   text,
-  iconRotate
+  iconRotate,
 }: IconButtonProps) => {
   return (
     <Styled.a
@@ -27,12 +27,12 @@ export const IconButton = ({
         variant: ["buttonStyles.signUp", "linkStyles.buttonDefault"],
         display: "inline-block",
         "&:hover": {
-          backgroundColor: "elixirLight"
+          backgroundColor: "elixirLight",
         },
         "&:active": {
           backgroundColor: "elixirLight",
-          transform: "translateY(4px)"
-        }
+          transform: "translateY(4px)",
+        },
       }}
     >
       <Flex sx={{ alignItems: "center", justifyContent: "center" }}>
@@ -41,7 +41,7 @@ export const IconButton = ({
           style={{
             margin: "14px 16px 14px -5px",
             fontSize: "36px",
-            transform: `rotate(${iconRotate}deg)`
+            transform: `rotate(${iconRotate}deg)`,
           }}
           icon={[iconPrefix, iconName]}
         />

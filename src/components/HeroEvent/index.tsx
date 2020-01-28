@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { Box, Flex, jsx, Styled } from "theme-ui";
-import SiteYamlType from "../../types/siteYaml";
 import { IconButton } from "../buttons/index";
 
 import { Logo } from "../Logo";
+
+import { graphql, useStaticQuery } from "gatsby";
 
 export interface HeroProps {
   heading: string;
@@ -12,32 +13,46 @@ export interface HeroProps {
   location1: string;
   location2: string;
   children?: React.ReactNode;
-  siteYaml: SiteYamlType;
-  background: string;
-  logoUrl: string;
 }
 
-export const HeroEventMeetup = ({
-  heading,
-  date,
-  children,
-  siteYaml,
-  background,
-  logoUrl
-}: HeroProps) => {
-  const {
-    buttonIconName,
-    buttonIconPrefix,
-    buttonText,
-    buttonHref
-  } = siteYaml.iconButton;
-  const { subHeading1, subHeading2 } = siteYaml.heroEvent;
+export const HeroEventMeetup = ({ heading, date, time, children }: HeroProps) => {
+  const data = useStaticQuery(graphql`
+    {
+      siteYaml {
+        iconButton {
+          buttonIconName
+          buttonIconPrefix
+          buttonText
+          buttonHref
+        }
+        heroEvent {
+          subHeading1
+          subHeading2
+        }
+      }
+      logo: file(
+        sourceInstanceName: { eq: "Asset" }
+        relativePath: { regex: "/logo.(svg|png|jpg|jpeg)/" }
+      ) {
+        publicURL
+      }
+      background: file(
+        sourceInstanceName: { eq: "Asset" }
+        relativePath: { regex: "/background.(svg|png|jpg|jpeg)/" }
+      ) {
+        publicURL
+      }
+    }
+  `);
+
+  const { buttonIconName, buttonIconPrefix, buttonText, buttonHref } = data.siteYaml.iconButton;
+  const { subHeading1, subHeading2 } = data.siteYaml.heroEvent;
   return (
     <Flex
       sx={{
         variant: "textStyles.heading",
         backgroundColor: "brandDark",
-        backgroundImage: `url(${background})`,
+        backgroundImage: `url(${data.background.publicURL})`,
         backgroundSize: "cover",
         backgroundBlendMode: "overlay",
         justifyContent: "space-around",
@@ -45,16 +60,16 @@ export const HeroEventMeetup = ({
         flexWrap: ["wrap", "nowrap", "nowrap"],
         paddingTop: "70px",
         height: ["100vh", "100vh", "100vh", "100vh", "70vh"],
-        minHeight: "550px"
+        minHeight: "550px",
       }}
     >
       <Flex
         sx={{
           flexDirection: "column",
-          alignItems: ["center", "baseline", "baseline"]
+          alignItems: ["center", "baseline", "baseline"],
         }}
       >
-        <Logo size="large" logoUrl={logoUrl} />
+        <Logo size="large" logoUrl={data.logo.publicURL} />
         <Heading>{heading}</Heading>
         <Flex
           sx={{
@@ -62,7 +77,7 @@ export const HeroEventMeetup = ({
             minHeight: "250px",
             justifyContent: "space-between",
             width: "100%",
-            margin: "auto"
+            margin: "auto",
           }}
         >
           <SubHeadingBox>
@@ -73,11 +88,21 @@ export const HeroEventMeetup = ({
               {date}
             </SubHeading>
           </SubHeadingBox>
+          {time && (
+            <SubHeadingBox>
+              <SubHeading position="right" weight="light">
+                {subHeading2}
+              </SubHeading>
+              <SubHeading position="left" weight="body">
+                {time}
+              </SubHeading>
+            </SubHeadingBox>
+          )}
           <Flex
             sx={{
               justifyContent: ["center", "center", "center"],
               flexDirection: ["column", "row", "row"],
-              textAlign: "center"
+              textAlign: "center",
             }}
           >
             <Box>
@@ -109,7 +134,7 @@ const Heading = ({ children }: ChildrenProps) => (
       color: "background",
       variant: "textStyles.heading",
       marginY: 3,
-      fontWeight: "body"
+      fontWeight: "body",
     }}
   >
     {children}
@@ -121,7 +146,7 @@ const SubHeadingBox = ({ children }: ChildrenProps) => (
     sx={{
       flexDirection: ["row", "row", "row"],
       paddingX: 3,
-      paddingY: [1, 1, 1]
+      paddingY: [1, 1, 1],
     }}
   >
     {children}
@@ -144,7 +169,7 @@ const SubHeading = ({ children, position, weight }: SubHeadingProps) => (
       marginY: position === ("right" || "left") ? "0" : "auto",
       font: "heading",
       fontWeight: weight,
-      paddingX: 3
+      paddingX: 3,
     }}
   >
     {children}

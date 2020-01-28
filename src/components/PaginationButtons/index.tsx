@@ -1,23 +1,28 @@
 /** @jsx jsx */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { Box, Flex, jsx, Styled } from "theme-ui";
-import SiteYamlType from "../../types/siteYaml";
 
 export interface PaginationButtonsProps {
-  pageContext: any;
-  siteYaml: SiteYamlType;
+  next?: string;
+  previous?: string;
 }
 
-export const PaginationButtons = ({
-  pageContext,
-  siteYaml
-}: PaginationButtonsProps) => {
-  const { previous, next } = pageContext;
+export const PaginationButtons = ({ next, previous }: PaginationButtonsProps) => {
+  const { siteYaml } = useStaticQuery(graphql`
+    {
+      siteYaml {
+        paginationButtons {
+          previous
+          next
+        }
+      }
+    }
+  `);
   const displayPrevious = previous === null ? "none" : "inline-block";
-  const previousPath = previous === null ? "none" : previous.frontmatter.path;
+  const previousPath = previous === null ? "none" : previous;
   const displayNext = next === null ? "none" : "inline-block";
-  const nextPath = next === null ? "none" : next.frontmatter.path;
+  const nextPath = next === null ? "none" : next;
 
   return (
     <Flex sx={{ justifyContent: "space-between" }}>
@@ -26,7 +31,7 @@ export const PaginationButtons = ({
           justifyContent: "flex-start",
           display: "inline-block",
           variant: "linkStyles.buttonDefault",
-          color: "text"
+          color: "text",
         }}
         to={previousPath}
       >
@@ -35,7 +40,7 @@ export const PaginationButtons = ({
             sx={{
               fontSize: 4,
               alignItems: "center",
-              display: "flex"
+              display: "flex",
             }}
           >
             <FontAwesomeIcon
@@ -52,7 +57,7 @@ export const PaginationButtons = ({
           alignItems: "center",
           display: displayNext,
           variant: "linkStyles.buttonDefault",
-          color: "text"
+          color: "text",
         }}
         to={nextPath}
       >
@@ -60,7 +65,7 @@ export const PaginationButtons = ({
           sx={{
             fontSize: 4,
             alignItems: "center",
-            display: "flex"
+            display: "flex",
           }}
         >
           {siteYaml.paginationButtons.next}

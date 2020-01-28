@@ -215,9 +215,6 @@ export default {
       lineHeight: "body",
       fontSize: [2, 2, 3],
     },
-    // Container: {
-    //   paddingX: [3, 4, 5]
-    // },
     Header: {
       variant: "textStyles.heading",
       color: "primary",
@@ -252,7 +249,6 @@ export default {
       fontSize: "36px",
     },
     li: { padding: 3 },
-    // p: { fontSize: 3 },
     hr: {
       borderBottom: theme =>
         `${theme.borderWidths[2]}px ${theme.borderStyles[0]} ${theme.colors.lightBorder}`,

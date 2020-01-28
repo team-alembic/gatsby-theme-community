@@ -43,7 +43,7 @@ const Heading = ({ children }: ChildrenProps) => (
       color: "mutedText",
       fontSize: [2, 2, 3],
       marginBottom: [3],
-      fontWeight: "body"
+      fontWeight: "body",
     }}
   >
     {children}
@@ -55,7 +55,7 @@ const FooterLinkGroup = ({ children }: ChildrenProps) => (
     sx={{
       flexWrap: "wrap",
       justifyContent: "space-between",
-      paddingTop: 2
+      paddingTop: 2,
     }}
   >
     {children}
@@ -79,8 +79,8 @@ const FooterLink = ({ href, children }: MapProps) => (
       fontSize: [1, 1, 2],
       textDecoration: "none",
       "&:hover": {
-        color: "primary"
-      }
+        color: "primary",
+      },
     }}
   >
     {children}

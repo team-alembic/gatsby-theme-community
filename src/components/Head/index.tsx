@@ -1,43 +1,58 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React, { ReactNode } from "react";
 import Helmet from "react-helmet";
-import FrontmatterType from "../../types/frontmatter";
-import SiteYamlType from "../../types/siteYaml";
+import { SiteYaml } from "../../types";
+
+interface Seo {
+  title: string;
+  description: string;
+  url: string;
+  image: string;
+}
 
 export interface HeadProps {
-  siteYaml: SiteYamlType;
-  frontmatter: FrontmatterType;
+  seo?: Seo;
+  page: string;
   children: ReactNode;
 }
 
-export const Head = ({ frontmatter, siteYaml, children }: HeadProps) => {
-  const { title, defaultImage, description, siteUrl } = siteYaml;
-  const {
-    path,
-    title: eventTitle,
-    description: frontmatterDescription,
-    mainImage,
-    startDate,
-    endDate,
-    location
-  } = frontmatter;
+export const Head = ({ children, page, seo }: HeadProps) => {
+  const data = useStaticQuery(graphql`
+    query {
+      siteYaml {
+        title
+        defaultImage
+        description
+        siteUrl
+        location {
+          name
+          streetAddress
+          city
+          latitude
+          longitude
+        }
+      }
+    }
+  `);
+  const { title, defaultImage, description, siteUrl, location }: SiteYaml = data.siteYaml;
   const { name, streetAddress, city, latitude, longitude } = location;
-  const seo = {
-    title: eventTitle || title,
-    description: frontmatterDescription || description,
-    url: path ? siteUrl + path : siteUrl,
-    image: mainImage ? siteUrl + mainImage.childImageSharp.fluid.src : defaultImage
-  };
+
+  if (!seo) {
+    seo = {
+      title,
+      description,
+      url: siteUrl,
+      image: defaultImage,
+    };
+  }
 
   return (
     <div>
-      <Helmet defaultTitle={title} titleTemplate={`%s &mdash; ${title}`}>
+      <Helmet defaultTitle={title} titleTemplate={`${title} | %s`}>
         >
         <html lang="en" />
         <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="theme-color" content="#1B1B38" />
         <link rel="canonical" href={seo.url} />
         <meta name="description" content={seo.description} />
@@ -47,6 +62,7 @@ export const Head = ({ frontmatter, siteYaml, children }: HeadProps) => {
         <meta property="og:url" content={seo.url} />
         <meta property="og:site_name" content={title} />
         <meta property="og:image" content={seo.image} />
+        <title>{page}</title>
         <script type="application/ld+json">
           {`{
         "@context": "http://schema.org",
@@ -54,8 +70,6 @@ export const Head = ({ frontmatter, siteYaml, children }: HeadProps) => {
         "name": ${seo.title},
         "url": ${seo.url},
         "description": ${seo.description},
-        "startDate": ${startDate},
-        "endDate": ${endDate},
         "location": {
           "@type": "Place",
           "name": ${name},

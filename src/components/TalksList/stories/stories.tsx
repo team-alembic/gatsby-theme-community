@@ -1,8 +1,9 @@
 import React from "react";
 
+// tslint:disable-next-line
 import { storiesOf } from "@storybook/react";
 
-import SiteYamlType from "../../../types/siteYaml"
+import SiteYamlType from "../../../types/siteYaml";
 import { TalkProps } from "../../Talk/index";
 import { TalksList } from "../index";
 
@@ -13,36 +14,28 @@ const fullTalk: TalkProps = {
   title: "Fun with TypeScript",
   speaker: {
     name: "James Sadler",
-    avatarUrl: jamesImage
+    avatarUrl: jamesImage,
   },
   description:
     "In a format we've blatantly stolen borrowed from the end of year Cocoaheads trivia festival, we'll be throwing random questions at you which will stretch your noodles and maybe even teach you some interesting facts about Elixir or Erlang. Or maybe just programming in general.",
   videoUrl: "https://www.youtube.com/watch?v=xTUK3uhFnlU",
-  slidesUrl: "https://speakerdeck.com/joshprice/elixir-performance-tuning"
+  slidesUrl: "https://speakerdeck.com/joshprice/elixir-performance-tuning",
 };
 
 const noResourcesTalk: TalkProps = {
   title: "Fun with TypeScript",
   speaker: {
     name: "Paul Fioravanti",
-    avatarUrl: paulImage
+    avatarUrl: paulImage,
   },
   description:
-    "In a format we've blatantly stolen borrowed from the end of year Cocoaheads trivia festival, we'll be throwing random questions at you which will stretch your noodles and maybe even teach you some interesting facts about Elixir or Erlang. Or maybe just programming in general."
+    "In a format we've blatantly stolen borrowed from the end of year Cocoaheads trivia festival, we'll be throwing random questions at you which will stretch your noodles and maybe even teach you some interesting facts about Elixir or Erlang. Or maybe just programming in general.",
 };
 
 storiesOf("Talks", module)
-  .add("One talk", () => (
-    <TalksList
-      talks={[fullTalk]}
-      siteYaml={siteYaml}
-    />
-  ))
+  .add("One talk", () => <TalksList talks={[fullTalk]} siteYaml={siteYaml} />)
   .add("multiple talks", () => (
-    <TalksList
-      talks={[fullTalk, noResourcesTalk]}
-      siteYaml={siteYaml}
-    />
+    <TalksList talks={[fullTalk, noResourcesTalk]} siteYaml={siteYaml} />
   ));
 
 const siteYaml: SiteYamlType = {
@@ -55,35 +48,36 @@ const siteYaml: SiteYamlType = {
   footer: {
     message1: "Interested in Elixir?",
     message2: "Join our Meetup today!",
-    copyright: "Copyright \u00A9 Elixir Sydney, powered by Gatsby & Theme UI."
+    copyright: "Copyright \u00A9 Elixir Sydney, powered by Gatsby & Theme UI.",
   },
   meetupButton: {
     buttonText: "Sign up on Meetup",
     buttonHref: "https://www.meetup.com/en-AU/elixir-sydney/events/kznqrpyzfbjb/",
-    buttonImage: "meetup.svg"
+    buttonImage: "meetup.svg",
   },
   talks: {
     title: "Talks",
     email: "elixirsydney@gmail.com",
     line1: "Submit a talk proposal!",
-    line2: "Send submissions to "
+    line2: "Send submissions to ",
   },
   headerNav: [
-    { 
+    {
       description: "Home",
-      href: "/"
+      href: "/",
     },
-    { 
+    {
       description: "Events",
-      href: "/events"
+      href: "/events",
     },
-    { 
+    {
       description: "About",
-      href: "/about"
-    }
+      href: "/about",
+    },
   ],
   // Default Props for unfurling
   image: "https://photos.google.com/photo/AF1QipMppod5cyNb-eWwmlFOumPYcKkRP6rggMhCO02T",
-  description: "Elixir Sydney is a regular meetup where developers meet to talk and learn about all things Elixir.",
-  siteUrl: "https://community-design-system.netlify.com"
-}
+  description:
+    "Elixir Sydney is a regular meetup where developers meet to talk and learn about all things Elixir.",
+  siteUrl: "https://community-design-system.netlify.com",
+};
