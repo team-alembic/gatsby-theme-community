@@ -6,7 +6,11 @@ This repo contains a [Gatsby](https://www.gatsbyjs.org/) theme focused on IT com
 yarn install
 ```
 
-# Custom the Gatsby Theme Comuunity
+# Linter
+That repo is using [TSLint](https://palantir.github.io/tslint/) into the CI and [Prettier](https://prettier.io/) into the IDE
+`tslint.json` and `tsconfig.json` are used for `TSLint` and `.prettierrc` for `Prettier`
+
+# Custom the Gatsby Theme Community
 To know more about how Gatsby Theme works, see [Building Themes](https://www.gatsbyjs.org/docs/themes/building-themes/)
 
 # Create new community website
