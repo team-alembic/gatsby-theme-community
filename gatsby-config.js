@@ -1,9 +1,8 @@
-module.exports = ({contentPath, meetupGroup, webFontOpts}) => ({
+module.exports = ({ contentPath, meetupGroup, webFontOpts }) => ({
   plugins: [
     "gatsby-plugin-typescript",
     "gatsby-transformer-yaml",
     "gatsby-plugin-mdx",
-    "gatsby-plugin-theme-ui",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
@@ -48,15 +47,6 @@ module.exports = ({contentPath, meetupGroup, webFontOpts}) => ({
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: webFontOpts
-    },
-    {
-      resolve: `gatsby-source-meetup`,
-      options: {
-        groupUrlName: meetupGroup,
-        eventsOptions: [{
-          fields: `event_hosts`
-        }]
-      }
     }
   ]
 });
