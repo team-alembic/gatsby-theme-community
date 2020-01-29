@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Flex, jsx, Styled } from "theme-ui";
-import SiteYamlType from "../../types/siteYaml";
-// import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export interface EventCardProps {
   title: string;
@@ -18,21 +16,9 @@ export interface EventCardProps {
   body: React.ReactNode;
   image: string;
   description: string;
-  siteYaml: SiteYamlType;
 }
 
-export const EventCard = ({
-  title,
-  slug,
-  date,
-  body,
-  image,
-  description,
-  siteYaml
-}: EventCardProps) => {
-  if (image === "null") {
-    image = siteYaml.defaultImage;
-  }
+export const EventCard = ({ title, slug, date, body, image, description }: EventCardProps) => {
   return (
     <Styled.a
       sx={{
@@ -65,9 +51,7 @@ export const EventCard = ({
         />
         <Box sx={{ padding: 4 }}>
           <Styled.p sx={{ marginY: 1, color: "text" }}>{title}</Styled.p>
-          <Styled.p
-            sx={{ marginTop: 0, marginBottom: 2, fontSize: 2, color: "text" }}
-          >
+          <Styled.p sx={{ marginTop: 0, marginBottom: 2, fontSize: 2, color: "text" }}>
             {description}
           </Styled.p>
           <Styled.p
@@ -79,15 +63,10 @@ export const EventCard = ({
               color: "#00ace6"
             }}
           >
-            Show More{" "}
-            <FontAwesomeIcon
-              icon={["fas", "chevron-right"]}
-              css={{ color: "#ff9900" }}
-            />
+            Show More <FontAwesomeIcon icon={["fas", "chevron-right"]} css={{ color: "#ff9900" }} />
           </Styled.p>
         </Box>
       </Flex>
     </Styled.a>
   );
 };
-

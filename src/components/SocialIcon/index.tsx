@@ -9,11 +9,7 @@ export interface SocialIconProps {
   iconUrl: string;
 }
 
-export const SocialIcon = ({
-  iconType,
-  iconKeyword,
-  iconUrl
-}: SocialIconProps) => (
+export const SocialIcon = ({ iconType, iconKeyword, iconUrl }: SocialIconProps) => (
   <Styled.a href={iconUrl} target="_blank">
     <FontAwesomeIcon
       // @ts-ignore

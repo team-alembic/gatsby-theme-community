@@ -10,10 +10,7 @@ export interface OrganisersRowProps {
   people: Person[];
 }
 
-export const OrganisersRow = ({
-  organisersTitle,
-  people
-}: OrganisersRowProps) => {
+export const OrganisersRow = ({ organisersTitle, people }: OrganisersRowProps) => {
   return (
     <Container>
       <Box sx={{ width: "100%", marginTop: [5, 0, 0] }}>

@@ -9,12 +9,7 @@ export interface MapDescriptionProps {
   instructions: string;
 }
 
-export const MapDescription = ({
-  mapUrl,
-  address,
-  name,
-  instructions
-}: MapDescriptionProps) => (
+export const MapDescription = ({ mapUrl, address, name, instructions }: MapDescriptionProps) => (
   <Flex
     sx={{
       paddingX: [3, 6, 7],
@@ -59,9 +54,7 @@ export const MapDescription = ({
               }}
             >
               <Styled.h3 sx={{ margin: 0, fontSize: 4 }}>{name}</Styled.h3>
-              <Styled.h3
-                sx={{ fontWeight: "body", marginY: 2, fontSize: [3, 3, 4] }}
-              >
+              <Styled.h3 sx={{ fontWeight: "body", marginY: 2, fontSize: [3, 3, 4] }}>
                 {address}
               </Styled.h3>
               <Styled.p sx={{ fontSize: [2, 2, 3], lineHeight: "heading" }}>

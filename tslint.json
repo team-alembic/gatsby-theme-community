@@ -6,13 +6,6 @@
     "tslint-react-hooks",
     "tslint-config-prettier"
   ],
-  "jsRules": {
-    "object-literal-sort-keys": true,
-    "no-console": false,
-    "one-variable-per-declaration": false,
-    "curly": [true, "ignore-same-line"],
-    "no-shadowed-variable": false
-  },
   "linterOptions": {
     "exclude": ["*.json", "**/*.json"]
   },
@@ -30,7 +23,9 @@
       "allow-pascal-case"
     ],
     "react-hooks-nesting": "error",
-    "no-implicit-dependencies": [true, "dev"]
+    "no-implicit-dependencies": [true, "dev"],
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+    "object-literal-shorthand": [true, "never"]
   },
   "rulesDirectory": []
 }

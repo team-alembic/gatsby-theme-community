@@ -15,16 +15,16 @@ export default interface Frontmatter {
 }
 
 interface Image {
-  publicURL: string
-  childImageSharp: ChildImageSharp
+  publicURL: string;
+  childImageSharp: ChildImageSharp;
 }
 
 interface ChildImageSharp {
-  fluid: Fluid
+  fluid: Fluid;
 }
 
 interface Fluid {
-  src: string
+  src: string;
 }
 
 interface Location {

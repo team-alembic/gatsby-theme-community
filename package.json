@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-community",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.18.18",
@@ -25,7 +25,6 @@
     "@types/storybook__react": "^4.0.2",
     "@types/styled-components": "^4.1.18",
     "babel-plugin-remove-graphql-queries": "^2.7.2",
-    "gatsby": "^2.18.18",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-mdx": "^1.0.67",
     "gatsby-plugin-react-helmet": "^3.1.21",
@@ -34,18 +33,16 @@
     "gatsby-plugin-typescript": "^2.1.26",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-source-meetup": "^1.1.0",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.12",
     "gatsby-transformer-yaml": "^2.2.23",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "path": "^0.12.7",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.3.2",
-    "theme-ui": "^0.2.52"
+    "theme-ui": "^0.2.52",
+    "typescript": "^3.7.4"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -59,7 +56,11 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.1.0",
     "tslint-react-hooks": "^2.2.1",
-    "typescript": "^3.7.4"
+    "gatsby": "^2.18.18",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

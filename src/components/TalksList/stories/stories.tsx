@@ -2,7 +2,7 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import SiteYamlType from "../../../types/siteYaml"
+import SiteYamlType from "../../../types/siteYaml";
 import { TalkProps } from "../../Talk/index";
 import { TalksList } from "../index";
 
@@ -32,17 +32,9 @@ const noResourcesTalk: TalkProps = {
 };
 
 storiesOf("Talks", module)
-  .add("One talk", () => (
-    <TalksList
-      talks={[fullTalk]}
-      siteYaml={siteYaml}
-    />
-  ))
+  .add("One talk", () => <TalksList talks={[fullTalk]} siteYaml={siteYaml} />)
   .add("multiple talks", () => (
-    <TalksList
-      talks={[fullTalk, noResourcesTalk]}
-      siteYaml={siteYaml}
-    />
+    <TalksList talks={[fullTalk, noResourcesTalk]} siteYaml={siteYaml} />
   ));
 
 const siteYaml: SiteYamlType = {
@@ -69,21 +61,22 @@ const siteYaml: SiteYamlType = {
     line2: "Send submissions to "
   },
   headerNav: [
-    { 
+    {
       description: "Home",
       href: "/"
     },
-    { 
+    {
       description: "Events",
       href: "/events"
     },
-    { 
+    {
       description: "About",
       href: "/about"
     }
   ],
   // Default Props for unfurling
   image: "https://photos.google.com/photo/AF1QipMppod5cyNb-eWwmlFOumPYcKkRP6rggMhCO02T",
-  description: "Elixir Sydney is a regular meetup where developers meet to talk and learn about all things Elixir.",
+  description:
+    "Elixir Sydney is a regular meetup where developers meet to talk and learn about all things Elixir.",
   siteUrl: "https://community-design-system.netlify.com"
-}
+};

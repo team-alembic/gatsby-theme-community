@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import { useEffect, useState } from "react";
 import { Box, Flex, jsx, Styled } from "theme-ui";
-import SiteYamlType from "../../types/siteYaml";
+import { SiteYaml } from "../../types";
 import { Logo } from "../Logo";
+
+import { graphql, useStaticQuery } from "gatsby";
 
 export type EventFunction = () => string;
 
@@ -13,13 +15,30 @@ export interface LinkProps {
 
 export interface HeaderNavProps {
   togglePageFix: EventFunction;
-  siteYaml: SiteYamlType;
-  logo: string;
   page: string;
 }
 
-export const HeaderNav = ({ togglePageFix, siteYaml, logo, page }: HeaderNavProps) => {
-  const { title, headerNav } = siteYaml;
+export const HeaderNav = ({ togglePageFix, page }: HeaderNavProps) => {
+  const data = useStaticQuery(graphql`
+    {
+      siteYaml {
+        title
+        headerNav {
+          description
+          href
+        }
+      }
+      logo: file(
+        sourceInstanceName: { eq: "Asset" }
+        relativePath: { regex: "/logo.(svg|png|jpg|jpeg)/" }
+      ) {
+        publicURL
+      }
+    }
+  `);
+  const { headerNav, title }: SiteYaml = data.siteYaml;
+
+  const logo = data.logo.publicURL;
 
   const [headerBg, setHeaderBg] = useState("headerTransparent");
 
@@ -35,29 +54,29 @@ export const HeaderNav = ({ togglePageFix, siteYaml, logo, page }: HeaderNavProp
   return (
     <Box
       sx={{
-        backgroundColor: page === "home" ? headerBg : "headerOpaque",
+        backgroundColor: page === "Home" ? headerBg : "headerOpaque",
         transition: ".6s",
         paddingX: [4, 4, 5],
-        paddingY: 3,
+        paddingY: 3
       }}
     >
       <BurgerNav
         togglePageFix={togglePageFix}
-        title={title}
         links={headerNav.map(link => ({
           description: link.description,
-          href: link.href,
+          href: link.href
         }))}
         logo={logo}
         page={page}
+        title={title}
       />
       <Navbar
         page={page}
-        title={title}
         logo={logo}
+        title={title}
         links={headerNav.map(link => ({
           description: link.description,
-          href: link.href,
+          href: link.href
         }))}
       />
     </Box>
@@ -66,19 +85,19 @@ export const HeaderNav = ({ togglePageFix, siteYaml, logo, page }: HeaderNavProp
 
 interface NavbarProps {
   links: LinkProps[];
-  title: string;
   logo: string;
+  title: string;
   page: string;
 }
 
-const Navbar = ({ links, title, logo, page }: NavbarProps) => {
+const Navbar = ({ links, logo, page, title }: NavbarProps) => {
   return (
     <Box sx={{ display: ["none", "block", "block"] }}>
       <Flex
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
-          paddingY: 3,
+          paddingY: 3
         }}
       >
         <Styled.a href="/">
@@ -91,14 +110,14 @@ const Navbar = ({ links, title, logo, page }: NavbarProps) => {
           css={{
             a: {
               opacity: 0.8,
-              transition: ".4s",
+              transition: ".4s"
             },
             "&:hover > a": {
-              opacity: 1,
+              opacity: 1
             },
             "&:hover > a:not(:hover)": {
-              opacity: ".5",
-            },
+              opacity: ".5"
+            }
           }}
         >
           {links.map((link: LinkProps, i: number) => (
@@ -106,7 +125,7 @@ const Navbar = ({ links, title, logo, page }: NavbarProps) => {
               key={i}
               href={link.href}
               sx={{
-                textDecoration: "none",
+                textDecoration: "none"
               }}
             >
               <HeaderLink>{link.description.toUpperCase()}</HeaderLink>
@@ -124,7 +143,7 @@ interface HeaderLogoProps {
   page: string;
 }
 
-const HeaderLogo = ({ children, logo, page }: HeaderLogoProps) => {
+const HeaderLogo = ({ logo, page, children }: HeaderLogoProps) => {
   const [smallHeadingOpacity, setHeadingOpacity] = useState(0);
 
   useEffect(() => {
@@ -149,11 +168,11 @@ const HeaderLogo = ({ children, logo, page }: HeaderLogoProps) => {
           fontFamily: "modern",
           fontWeight: "light",
           lineHeight: "heading",
-          opacity: page === "home" ? smallHeadingOpacity : 1,
+          opacity: page === "Home" ? smallHeadingOpacity : 1,
           display: "inline-block",
           verticalAlign: "super",
           marginLeft: "20px",
-          transition: ".6s opacity",
+          transition: ".6s opacity"
         }}
       >
         {children}
@@ -176,7 +195,7 @@ const HeaderLink = ({ children }: ChildrenProps) => (
       marginX: [4, 4, 5],
       letterSpacing: [0, 0, "1px"],
       fontWeight: "light",
-      font: "modern",
+      font: "modern"
     }}
   >
     {children}
@@ -188,7 +207,7 @@ const BurgerLink = ({ children }: ChildrenProps) => (
     sx={{
       variant: "borderStyles.veryLightBorderTop",
       width: "100%",
-      padding: 4,
+      padding: 4
     }}
   >
     <Styled.p
@@ -203,8 +222,8 @@ const BurgerLink = ({ children }: ChildrenProps) => (
         "&:hover": {
           color: "background",
           backgroundColor: "elixirLight",
-          variant: "boxShadowStyles.mediumShadow",
-        },
+          variant: "boxShadowStyles.mediumShadow"
+        }
       }}
     >
       {children}
@@ -220,7 +239,7 @@ const IconBar = () => (
       marginY: "6px",
       backgroundColor: "background",
       opacity: 0.8,
-      borderRadius: 4,
+      borderRadius: 4
     }}
   />
 );
@@ -239,13 +258,13 @@ const BurgerIcon = ({ dropDownOnClick }: DropdownProps) => (
 
 interface BurgerNavProps {
   links: LinkProps[];
-  title: string;
   togglePageFix: EventFunction;
+  title: string;
   logo: string;
   page: string;
 }
 
-const BurgerNav = ({ links, title, togglePageFix, logo, page }: BurgerNavProps) => {
+const BurgerNav = ({ links, togglePageFix, title, logo, page }: BurgerNavProps) => {
   const [value, setValue] = useState("none");
 
   const dropDownOnClick = () => {
@@ -265,7 +284,7 @@ const BurgerNav = ({ links, title, togglePageFix, logo, page }: BurgerNavProps) 
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
-          paddingY: 3,
+          paddingY: 3
         }}
       >
         <Styled.a href="/">
@@ -285,7 +304,7 @@ const BurgerNav = ({ links, title, togglePageFix, logo, page }: BurgerNavProps) 
           variant: "textStyles.modern",
           fontSize: 3,
           zIndex: 25,
-          left: 0,
+          left: 0
         }}
       >
         <Flex
@@ -293,7 +312,7 @@ const BurgerNav = ({ links, title, togglePageFix, logo, page }: BurgerNavProps) 
             width: "100%",
             flexDirection: "column",
             textAlign: "center",
-            zIndex: 5,
+            zIndex: 5
           }}
         >
           {links.map((link, i) => (
@@ -313,7 +332,7 @@ const BurgerNav = ({ links, title, togglePageFix, logo, page }: BurgerNavProps) 
             width: "100%",
             height: "100%",
             backgroundColor: "darkness",
-            opacity: "0.2",
+            opacity: "0.2"
           }}
         />
       </Box>

@@ -14,7 +14,7 @@ export const PageInformation = ({ heading1, paragraph1 }: PageInformationProps) 
         <Flex
           sx={{
             width: "100%",
-            flexDirection: ["column", "row", "row"],
+            flexDirection: ["column", "row", "row"]
           }}
         >
           <Paragraph>{paragraph1}</Paragraph>
@@ -36,7 +36,7 @@ const Paragraph = ({ children }: ChildrenProps) => (
       flexDirection: "column",
       fontFamily: "body",
       marginX: [0, 0, 90],
-      marginBottom: 40,
+      marginBottom: 40
     }}
   >
     {children}
@@ -52,7 +52,7 @@ const Heading = ({ children }: ChildrenProps) => (
       variant: "textStyles.heading",
       marginY: 50,
       fontFamily: "body",
-      fontWeight: "normal",
+      fontWeight: "normal"
     }}
   >
     {children}

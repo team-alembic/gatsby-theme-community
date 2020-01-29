@@ -1,16 +1,29 @@
 /** @jsx jsx */
 import { Box, Container, Flex, jsx, Styled } from "theme-ui";
 
-import SiteYamlType from "../../types/siteYaml";
+import { graphql, useStaticQuery } from "gatsby";
 import { Talk, TalkProps } from "../Talk/index";
 
 export interface TalksProps {
   talks: TalkProps[];
-  siteYaml: SiteYamlType;
 }
 
-export const TalksList = ({ talks, siteYaml }: TalksProps) => {
+export const TalksList = ({ talks }: TalksProps) => {
+  const { siteYaml } = useStaticQuery(graphql`
+    {
+      siteYaml {
+        talks {
+          title
+          line1
+          line2
+          email
+        }
+      }
+    }
+  `);
+
   const { title, line1, line2, email } = siteYaml.talks;
+
   return (
     <Flex
       sx={{

@@ -38,9 +38,6 @@ storiesOf("Talk", module)
     />
   ))
   .add("video icon only", () => (
-    <Talk
-      {...noResourcesTalk}
-      videoUrl="https://www.youtube.com/watch?v=xTUK3uhFnlU"
-    />
+    <Talk {...noResourcesTalk} videoUrl="https://www.youtube.com/watch?v=xTUK3uhFnlU" />
   ))
   .add("no icons", () => <Talk {...noResourcesTalk} />);

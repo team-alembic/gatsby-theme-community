@@ -1,20 +1,25 @@
 /** @jsx jsx */
+import { graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Flex, jsx, Styled } from "theme-ui";
 
 export interface NextEventProps {
-  siteYaml: any;
-  eventImgUrl: string;
   title: string;
   body: string;
 }
 
-export const NextEvent = ({
-  siteYaml,
-  eventImgUrl,
-  title,
-  body
-}: NextEventProps) => {
+export const NextEvent = ({ title, body }: NextEventProps) => {
+  const data = useStaticQuery(graphql`
+    {
+      event: file(
+        sourceInstanceName: { eq: "Asset" }
+        relativePath: { regex: "/main_event.(svg|png|jpg|jpeg)/" }
+      ) {
+        publicURL
+      }
+    }
+  `);
+
   return (
     <Container>
       <Flex
@@ -25,7 +30,7 @@ export const NextEvent = ({
       >
         <Styled.div
           sx={{
-            backgroundImage: `url(${eventImgUrl})`,
+            backgroundImage: `url(${data.event.publicURL})`,
             width: ["auto", "auto", "1000px"],
             height: ["500px", "400px", "auto"],
             backgroundSize: "cover",
@@ -57,12 +62,9 @@ export const NextEvent = ({
           <Flex
             sx={{
               flexDirection: "column"
-              // width: ["100%", "68%", "68%"]
             }}
           >
-            <MDXRenderer components={null} scope={null}>
-              {body}
-            </MDXRenderer>
+            <MDXRenderer>{body}</MDXRenderer>
           </Flex>
         </Flex>
       </Flex>

@@ -16,7 +16,6 @@ storiesOf("HeroEventMeetup", module).add("example", () => {
       location2="Level 3, 14 Martin Place NSW 2000"
       siteYaml={siteYaml}
       background={background}
-   
     />
   );
 });
@@ -36,8 +35,7 @@ const siteYaml: SiteYamlType = {
   },
   meetupButton: {
     buttonText: "Sign up on Meetup",
-    buttonHref:
-      "https://www.meetup.com/en-AU/elixir-sydney/events/kznqrpyzfbjb/",
+    buttonHref: "https://www.meetup.com/en-AU/elixir-sydney/events/kznqrpyzfbjb/",
     buttonImage: "meetup.svg",
     buttonIconName: "meetup",
     buttonIconPrefix: "fab"
@@ -63,8 +61,7 @@ const siteYaml: SiteYamlType = {
     }
   ],
   // Default Props for unfurling
-  image:
-    "https://photos.google.com/photo/AF1QipMppod5cyNb-eWwmlFOumPYcKkRP6rggMhCO02T",
+  image: "https://photos.google.com/photo/AF1QipMppod5cyNb-eWwmlFOumPYcKkRP6rggMhCO02T",
   description:
     "Elixir Sydney is a regular meetup where developers meet to talk and learn about all things Elixir.",
   siteUrl: "https://community-design-system.netlify.com"

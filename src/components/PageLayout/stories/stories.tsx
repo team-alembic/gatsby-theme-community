@@ -3,12 +3,11 @@ import { storiesOf } from "@storybook/react";
 import React from "react";
 
 import { PageLayout } from "../";
-import SiteYamlType from "../../../types/siteYaml"
-
+import SiteYamlType from "../../../types/siteYaml";
 
 storiesOf("PageLayout", module).add("example", () => {
   return (
-    <PageLayout siteYaml={siteYaml} >
+    <PageLayout siteYaml={siteYaml}>
       <div />
     </PageLayout>
   );
@@ -40,21 +39,22 @@ const siteYaml: SiteYamlType = {
     line2: "Send submissions to "
   },
   headerNav: [
-    { 
+    {
       description: "Home",
       href: "/"
     },
-    { 
+    {
       description: "Events",
       href: "/events"
     },
-    { 
+    {
       description: "About",
       href: "/about"
     }
   ],
   // Default Props for unfurling
   image: "https://photos.google.com/photo/AF1QipMppod5cyNb-eWwmlFOumPYcKkRP6rggMhCO02T",
-  description: "Elixir Sydney is a regular meetup where developers meet to talk and learn about all things Elixir.",
+  description:
+    "Elixir Sydney is a regular meetup where developers meet to talk and learn about all things Elixir.",
   siteUrl: "https://community-design-system.netlify.com"
-}
+};
