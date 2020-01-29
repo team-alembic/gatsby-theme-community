@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 import Helmet from "react-helmet";
 import { SiteYaml } from "../../types";
 
-type HeadProps = {
+interface HeadProps {
   seo?: {
     title: string;
     description: string;
@@ -12,7 +12,7 @@ type HeadProps = {
   };
   page: string;
   children: ReactNode;
-};
+}
 
 export const Head = ({ children, page, seo }: HeadProps) => {
   const data = useStaticQuery(graphql`
@@ -37,8 +37,8 @@ export const Head = ({ children, page, seo }: HeadProps) => {
 
   if (!seo) {
     seo = {
-      title,
-      description,
+      title: title,
+      description: description,
       url: siteUrl,
       image: defaultImage
     };

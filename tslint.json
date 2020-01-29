@@ -24,7 +24,8 @@
     ],
     "react-hooks-nesting": "error",
     "no-implicit-dependencies": [true, "dev"],
-    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}]
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+    "object-literal-shorthand": [true, "never"]
   },
   "rulesDirectory": []
 }

@@ -24,7 +24,7 @@ export const PageLayout = ({ page, children }: PageLayoutProps) => {
   };
   return (
     <Styled.root>
-      <Layout sx={{ position, width: "100vw" }}>
+      <Layout sx={{ position: position, width: "100vw" }}>
         <Global
           styles={css`
             body {
