@@ -3,18 +3,16 @@ import React, { ReactNode } from "react";
 import Helmet from "react-helmet";
 import { SiteYaml } from "../../types";
 
-interface Seo {
-  title: string;
-  description: string;
-  url: string;
-  image: string;
-}
-
-export interface HeadProps {
-  seo?: Seo;
+type HeadProps = {
+  seo?: {
+    title: string;
+    description: string;
+    url: string;
+    image: string;
+  };
   page: string;
   children: ReactNode;
-}
+};
 
 export const Head = ({ children, page, seo }: HeadProps) => {
   const data = useStaticQuery(graphql`
