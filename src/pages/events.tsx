@@ -37,6 +37,7 @@ const Events = () => {
             }}
           >
             {allEventMdx.edges.map((event: Event, index: number) => {
+              const node = event.node;
               const image = event.node.mainImage
                 ? event.node.mainImage.childImageSharp.fluid.src
                 : defaultThumbnail.publicURL;
@@ -47,11 +48,11 @@ const Events = () => {
               return (
                 <Box key={index} sx={{ padding: 4 }}>
                   <EventCard
-                    title={event.node.title}
-                    date={event.node.date}
-                    description={event.node.description}
-                    slug={event.node.path}
-                    body={event.node.body}
+                    title={node.title}
+                    date={node.date}
+                    description={node.description}
+                    slug={node.path}
+                    body={node.body}
                     image={image}
                   />
                 </Box>
