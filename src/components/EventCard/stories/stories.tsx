@@ -9,7 +9,9 @@ storiesOf("EventCard", module).add("example", () => {
     <EventCard
       title="Elixir Sydney"
       slug="https://www.meetup.com/elixir-sydney/events/qfdzcryzlbkb/"
-      date="December 2018"
+      image=""
+      description="Event Description"
+      date="01/01/2020"
       body={
         <>
           <p>Currently looking for talks, let us know if you'd like to present a topic.</p>

@@ -70,8 +70,7 @@ export const MapDescription = ({ mapUrl, address, name, instructions }: MapDescr
 );
 
 const Marker = () => (
-  <Box
-    as="svg"
+  <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
     sx={{ height: [4, 4, 5], width: [4, 4, 5] }}
@@ -88,5 +87,5 @@ const Marker = () => (
 			S307.441,92.134,256,92.134z M256,245.328c-33.03,0-59.9-26.871-59.9-59.901s26.871-59.901,59.9-59.901s59.9,26.871,59.9,59.901
 			S289.029,245.328,256,245.328z"
     />
-  </Box>
+  </svg>
 );

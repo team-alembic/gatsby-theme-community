@@ -26,14 +26,14 @@ export default ({ data: { siteYaml, eventMdx }, pageContext: { next, previous } 
 
   const seo = {
     title: eventMdx.title,
-    descrition: eventMdx.description,
+    description: eventMdx.description,
     url: eventMdx.urlEvent,
     image: eventMdx.mainImage
   };
 
   return (
-    <Head page="Event">
-      <PageLayout page="Events" seo={seo}>
+    <Head page="Event" seo={seo}>
+      <PageLayout page="Events">
         <Container sx={{ marginTop: 70 }}>
           <PaginationButtons next={next} previous={previous} />
           {eventMdx.images && <SlideShow imageUrls={eventMdx.images} />}

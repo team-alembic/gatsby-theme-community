@@ -24,6 +24,7 @@
     "@types/react-helmet": "^5.0.9",
     "@types/storybook__react": "^4.0.2",
     "@types/styled-components": "^4.1.18",
+    "@types/theme-ui": "^0.2.7",
     "babel-plugin-remove-graphql-queries": "^2.7.2",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-mdx": "^1.0.67",
@@ -49,24 +50,24 @@
     "@storybook/addon-actions": "^5.1.10",
     "@storybook/addon-links": "^5.1.10",
     "@storybook/addons": "^5.1.10",
+    "@storybook/preset-typescript": "^1.2.0",
     "@storybook/react": "^5.3.3",
     "@types/storybook__react": "^4.0.2",
     "babel-loader": "^8.0.6",
+    "gatsby": "^2.18.18",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.1.0",
-    "tslint-react-hooks": "^2.2.1",
-    "gatsby": "^2.18.18",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "tslint-react-hooks": "^2.2.1"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "tslint": "tslint -p tsconfig.json -c tslint.json",
-    "tslint-fix": "tslint --fix -p tsconfig.json -c tslint.json",
-    "tslint-check": "tslint-config-prettier-check tslint.json"
+    "tslint": "tslint -p tsconfig.json -c tslint.json -t stylish",
+    "tslint-fix": "tslint --fix -p tsconfig.json -c tslint.json -t stylish",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "typescript": "tsc -p tsconfig.json"
   }
 }

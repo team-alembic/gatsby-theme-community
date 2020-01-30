@@ -44,8 +44,7 @@ export const Quote = ({ title, name, company, quote }: QuoteProps) => (
 );
 
 const QuoteMark = () => (
-  <Box
-    as="svg"
+  <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -65,5 +64,5 @@ const QuoteMark = () => (
 		c0-7.896-6.402-14.304-14.299-14.304h-44.992C291.873,128.095,306.981,99.186,334.773,99.186z"
       />
     </g>
-  </Box>
+  </svg>
 );

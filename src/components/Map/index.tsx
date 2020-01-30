@@ -21,8 +21,7 @@ export const Map = ({ srcUrl, address }: MapProps) => (
       backgroundColor: "background"
     }}
   >
-    <Box
-      as="iframe"
+    <iframe
       title="iframe-map"
       src={srcUrl}
       frameBorder="0"
