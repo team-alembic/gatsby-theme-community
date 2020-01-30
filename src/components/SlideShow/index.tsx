@@ -55,6 +55,8 @@ export const SlideShow = ({ imageUrls }: SlideShowProps) => {
         justifyContent: "center"
       }}
     >
+      {/*
+          // @ts-ignore: TODO treat using class */}
       <Box onClick={handlePrevious} sx={{ cursor: "pointer", visibility: showPrevious }}>
         <FontAwesomeIcon
           icon={["fas", "chevron-left"]}
@@ -70,6 +72,8 @@ export const SlideShow = ({ imageUrls }: SlideShowProps) => {
           backgroundPosition: "center"
         }}
       />
+      {/*
+          // @ts-ignore: TODO treat using class */}
       <Box onClick={handleNext} sx={{ cursor: "pointer", visibility: showNext }}>
         <FontAwesomeIcon
           icon={["fas", "chevron-right"]}

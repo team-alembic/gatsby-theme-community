@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui";
 
 export interface AvatarProps {
   image: string;
-  size: "small" | "large";
+  size?: "small" | "large";
 }
 
 export const Avatar = ({ image, size }: AvatarProps) => (

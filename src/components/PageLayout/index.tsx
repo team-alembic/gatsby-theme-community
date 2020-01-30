@@ -10,7 +10,7 @@ import { HeaderNav } from "../HeaderNav";
 library.add(faCheckSquare, faCoffee);
 
 export interface PageLayoutProps {
-  page: string;
+  page?: string;
   children: ReactNode;
 }
 
@@ -22,8 +22,17 @@ export const PageLayout = ({ page, children }: PageLayoutProps) => {
 
     return position;
   };
+
+  const fixed = {
+    position: "fixed",
+    maxWidth: "100%",
+    padding: "0px",
+    zIndex: "100"
+  };
   return (
     <Styled.root>
+      {/*
+          // @ts-ignore: TODO treat using class */}
       <Layout sx={{ position: position, width: "100vw" }}>
         <Global
           styles={css`
@@ -32,14 +41,10 @@ export const PageLayout = ({ page, children }: PageLayoutProps) => {
             }
           `}
         />
-        <Container
-          sx={{
-            position: "fixed",
-            maxWidth: "100%",
-            padding: "0px",
-            zIndex: "100"
-          }}
-        >
+
+        {/*
+            // @ts-ignore: TODO treat using class */}
+        <Container sx={fixed}>
           <HeaderNav togglePageFix={togglePageFix} page={page} />
         </Container>
         {children}

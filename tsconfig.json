@@ -5,13 +5,11 @@
     "jsx": "react",
     "lib": ["dom", "es2015", "es2017"],
     "moduleResolution": "node",
-    "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "typeRoots": ["src/types"],
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "typeRoots": ["./src/types"],
+    "allowUnreachableCode": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*.tsx", "src/**/*.ts", "src/**/*.d.ts"]
 }

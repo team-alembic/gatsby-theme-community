@@ -68,6 +68,6 @@
     "tslint": "tslint -p tsconfig.json -c tslint.json -t stylish",
     "tslint-fix": "tslint --fix -p tsconfig.json -c tslint.json -t stylish",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
-    "typescript": "tsc --skipLibCheck --noEmit -p tsconfig.json"
+    "typescript": "tsc -p tsconfig.json"
   }
 }
