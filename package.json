@@ -54,6 +54,7 @@
     "@storybook/react": "^5.3.3",
     "@types/storybook__react": "^4.0.2",
     "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.1.0",
     "gatsby": "^2.18.18",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -63,8 +64,8 @@
     "tslint-react-hooks": "^2.2.1"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "NODE_ENV=production start-storybook -s public",
+    "build-storybook": "NODE_ENV=production build-storybook -s public",
     "tslint": "tslint -p tsconfig.json -c tslint.json -t stylish",
     "tslint-fix": "tslint --fix -p tsconfig.json -c tslint.json -t stylish",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
