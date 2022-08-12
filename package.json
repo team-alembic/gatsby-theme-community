@@ -52,7 +52,6 @@
     "@storybook/addons": "^6.5.10",
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^6.5.10",
-    "@types/storybook__react": "^4.0.2",
     "babel-loader": "^8.2.5",
     "babel-preset-react-app": "^10.0.1",
     "gatsby": "^4.20.0",
